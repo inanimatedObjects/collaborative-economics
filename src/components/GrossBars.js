@@ -30,6 +30,7 @@ export default class GrossBars extends Component {
 
     let boatCost = props.boatCost;
     let houseCost = props.houseCost;
+    console.log(boatCost, houseCost)
     let names = ['Boat ', 'House ']
 
     let x = d3.scaleLinear()
@@ -49,7 +50,19 @@ export default class GrossBars extends Component {
       .attr("transform", "translate(50, 20)")
       .call(yAxis)
 
+    let boatBar = svg.append('rect')
+      .attr('width', (25000 / 250000) * w)
+      .attr('height', 50)
+      .attr('x', 50)
+      .attr('y', 200)
+      .attr('fill', 'blue')
 
+    let houseBar = svg.append('rect')
+      .attr('width', (200000 / 250000) * w)
+      .attr('height', 50)
+      .attr('x', 50)
+      .attr('y', 50)
+      .attr('fill', 'green')
 
   }
 }
