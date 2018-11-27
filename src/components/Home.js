@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ExclusiveBars from './components/ExclusiveBars.js';
-import GrossBars from './components/GrossBars.js';
-import LineGraph from './components/LineGraph.js';
-import SharedBars from './components/SharedBars.js';
-import Utilization from './components/Utilization.js';
+import ExclusiveBars from './ExclusiveBars.js';
+import GrossBars from './GrossBars.js';
+import LineGraph from './LineGraph.js';
+import SharedBars from './SharedBars.js';
+import Utilization from './Utilization.js';
 
-export default class Controller extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     this.state = {
