@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ExclusiveBars from './components/ExclusiveBars.js';
 import GrossBars from './components/GrossBars.js';
 import LineGraph from './components/LineGraph.js';
@@ -16,18 +17,38 @@ export default class Controller extends Component {
 
   render() {
     return(
-      <div className="controller">
-        <h3>Gross Bars</h3>
-        <GrossBars />
-        <h3>Exclusive Bars</h3>
-        <ExclusiveBars />
-        <h3>Shared Bars</h3>
-        <SharedBars />
-        <h3>Utilization</h3>
-        <Utilization />
-        <h3>Line Graph</h3>
-        <LineGraph />
-      </div>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/ExclusiveBars">Exclusive Bars</Link>
+            </li>
+            <li>
+              <Link to="/GrossBars">Gross Bars</Link>
+            </li>
+            <li>
+              <Link to="/SharedBars">Shared Bars</Link>
+            </li>
+            <li>
+              <Link to="/Utilization">Utilization</Link>
+            </li>
+            <li>
+              <Link to="/LineGraph">Line Graph</Link>
+            </li>
+          </ul>
+
+          <hr />
+
+          <Route path="/ExclusiveBars" component={ExclusiveBars} />
+          <Route path="/GrossBars" component={GrossBars} />
+          <Route path="/SharedBars" component={SharedBars} />
+          <Route path="/Utilization" component={Utilization} />
+          <Route path="/LineGraph" component={LineGraph} />
+        </div>
+      </Router>
     )
   }
 }
