@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
-// import Home from './components/Home.js';
+import Drivers from './components/Drivers.js';
 import Scenario from './components/Scenario.js';
+import Preface from './components/Preface.js';
 import Requirements from './components/Requirements.js';
 import Savings from './components/Savings.js';
 import Approach from './components/Approach.js';
@@ -26,12 +27,8 @@ class App extends Component {
           <Router>
             <div>
               <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/Scenario">Scenario</Link>
-                </li>
+                <li><Link to="/Preface">Preface</Link></li>
+                <li><Link to="/Scenario">Scenario</Link></li>
                 <li>
                   <Link to="/Requirements">Requirements</Link>
                 </li>
@@ -57,11 +54,15 @@ class App extends Component {
 
               <hr />
               <header className="App-header">
-              <h3> collaborative economics </h3>
-              <h3> this is where the persistent drivers will go </h3>
+                <h1> collaborative economics </h1>
               </header>
-              <h3>this page</h3>
 
+              <div className="Drivers">
+                <div className="Content"> Content copy</div>
+                <div className="Data">Data Drivers</div>
+              </div>
+
+              <Route path="/Preface" component={Preface} />
               <Route path="/Scenario" component={Scenario} />
               <Route path="/Requirements" component={Requirements} />
               <Route path="/Savings" component={Savings} />
@@ -72,6 +73,7 @@ class App extends Component {
               <Route path="/Conclusion" component={Conclusion} />
             </div>
           </Router>
+          <div>an inanimatedObjects project</div>
       </div>
     );
   }
