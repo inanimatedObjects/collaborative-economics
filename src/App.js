@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
+// import './Content.js';
+import { content } from './Content.js';
 import Drivers from './components/Drivers.js';
 import Scenario from './components/Scenario.js';
 import Preface from './components/Preface.js';
@@ -11,6 +13,20 @@ import Utilization from './components/Utilization.js';
 import Availability from './components/Availability.js';
 import Comparison from './components/Comparison.js';
 import Conclusion from './components/Conclusion.js';
+
+// const content = {
+//     preface,
+//     scenario,
+//     requirements,
+//     savings,
+//     approach,
+//     utilization,
+//     availability,
+//     comparison,
+//     conclusion
+// }
+
+
 
 class App extends Component {
     constructor() {
