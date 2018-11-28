@@ -56,10 +56,14 @@ class App extends Component {
               <header className="App-header">
                 <h1> collaborative economics </h1>
               </header>
-
-              <div className="Drivers">
-                <div className="Content"> Content copy</div>
-                <div className="Data">Data Drivers</div>
+              
+              <div className="Top-content-bar">
+                <div className="ContentCopy">
+                  <div className="Content"> Content copy</div>
+                </div>
+                <div className="Drivers">
+                  <div className="Data">Data Drivers</div>
+                </div>
               </div>
 
               <Route path="/Preface" component={Preface} />

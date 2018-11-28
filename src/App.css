@@ -8,6 +8,19 @@
 
 }
 
+.Top-content-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.ContentCopy {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin-right: auto;
+  justify-content: center;
+}
+
 .Drivers {
   background-color: #282c34;
   display: flex;
@@ -16,6 +29,8 @@
   justify-content: center;
   font-size: calc(5px + 1vmin);
   color: white;
+  width: 50%;
+  margin-left: auto;
 }
 
 .App-link {
