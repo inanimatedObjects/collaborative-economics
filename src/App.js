@@ -13,6 +13,7 @@ import Availability from './components/Availability.js';
 import Comparison from './components/Comparison.js';
 import Conclusion from './components/Conclusion.js';
 
+
 class App extends Component {
 
   constructor() {
@@ -26,14 +27,26 @@ class App extends Component {
     };
   }
 
+  // Hide/show input panel
+  formToggle = () => {
+    let form = document.getElementById('inputForm')
+    if (this.state.location === 'Preface' || this.state.location === 'Scenario' || this.state.location === 'Conclusion' || this.state.location === '') {
+      form.style.visibility = 'hidden'
+    } else {
+      form.style.visibility = 'visible'
+    }
+  }
+
   // Update location via navbar
   updateLocation = (event) => {
     this.setState({ location: event.target.text })
+    this.formToggle()
   };
 
   // Update location via next button
   handleNextClick = (event) => {
     this.setState({ location: event.target.href.split('/').pop()})
+    this.formToggle()
   }
 
   // Update cost data in state when form is submitted
@@ -74,7 +87,7 @@ class App extends Component {
                 </div>
                 <div className="Drivers">
                   <div className="Data">
-                    <form onSubmit={this.updateCosts}>
+                    <form id="inputForm" onSubmit={this.updateCosts}>
                       House Cost: <input type="number" name="houseInput" defaultValue={this.state.houseCost} />
                       Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.boatCost} />
                       Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.truckCost} />
