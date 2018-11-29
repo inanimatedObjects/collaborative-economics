@@ -6,6 +6,11 @@ export default class Scenario extends Component {
     constructor() {
       super();
     }
+
+    componentDidMount() {
+      this.props.formToggle()
+    }
+
     render() {
       return(
         <div className="scenario" >

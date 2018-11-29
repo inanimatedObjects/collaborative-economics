@@ -8,6 +8,11 @@ export default class Preface extends Component {
     constructor() {
       super();
     }
+
+    componentDidMount() {
+      this.props.formToggle()
+    }
+
     render() {
       return(
         <div className="preface" >

@@ -6,6 +6,11 @@ export default class Approach extends Component {
     constructor() {
       super();
     }
+
+    componentDidMount() {
+      this.props.formToggle()
+    }
+
     render() {
       return(
         <div className="approach" >

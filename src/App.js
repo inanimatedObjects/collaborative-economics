@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import './App.css';
 import { content } from './Content.js';
-import Drivers from './components/Drivers.js';
 import Scenario from './components/Scenario.js';
 import Preface from './components/Preface.js';
 import Requirements from './components/Requirements.js';
@@ -24,13 +23,14 @@ class App extends Component {
       truckCost: 20000,
       location: 'Preface',
       handleNextClick: this.handleNextClick,
+      formToggle: this.formToggle
     };
   }
 
   // Hide/show input panel
   formToggle = () => {
     let form = document.getElementById('inputForm')
-    if (this.state.location === 'Preface' || this.state.location === 'Scenario' || this.state.location === 'Conclusion' || this.state.location === '') {
+    if (this.state.location === 'Preface' || this.state.location === 'Scenario' || this.state.location === 'Conclusion') {
       form.style.visibility = 'hidden'
     } else {
       form.style.visibility = 'visible'
@@ -40,13 +40,11 @@ class App extends Component {
   // Update location via navbar
   updateLocation = (event) => {
     this.setState({ location: event.target.text })
-    this.formToggle()
   };
 
   // Update location via next button
   handleNextClick = (event) => {
     this.setState({ location: event.target.href.split('/').pop()})
-    this.formToggle()
   }
 
   // Update cost data in state when form is submitted

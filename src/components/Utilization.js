@@ -9,6 +9,10 @@ export default class Utilization extends Component {
     super();
   }
 
+  componentDidMount() {
+    this.props.formToggle()
+  }
+
   render() {
     return(
       <div className="utilization">

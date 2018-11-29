@@ -4,6 +4,11 @@ export default class Conclusion extends Component {
     constructor() {
       super();
     }
+
+    componentDidMount() {
+      this.props.formToggle()
+    }
+
     render() {
       return(
         <div className="conclusion" >
