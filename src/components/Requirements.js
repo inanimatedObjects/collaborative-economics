@@ -6,7 +6,7 @@ export default class Requirements extends Component {
     constructor() {
       super();
     }
-    
+
     componentDidMount() {
       this.props.formToggle()
     }
@@ -15,9 +15,9 @@ export default class Requirements extends Component {
       return(
         <div className="requirements">
           <p> requirements page </p>
-          <p> house cost: {this.props.houseCost} </p>
-          <p> boat cost: {this.props.boatCost} </p>
-          <p> truck cost: {this.props.truckCost} </p>
+          <p> house cost: {this.props.data.houseCost} </p>
+          <p> boat cost: {this.props.data.boatCost} </p>
+          <p> truck cost: {this.props.data.truckCost} </p>
           <button><Link to="/Savings" onClick={this.props.handleNextClick}> Next </Link></button>
         </div>
       )

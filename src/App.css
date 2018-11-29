@@ -46,8 +46,10 @@ p {
 }
 
 ul {
+    display: flex;
     list-style-type: none;
     overflow: hidden;
+    justify-content: center;
 }
 
 li {
