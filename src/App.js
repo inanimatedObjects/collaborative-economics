@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 // import './Content.js';
 import Drivers from './components/Drivers.js';
@@ -12,7 +12,6 @@ import Utilization from './components/Utilization.js';
 import Availability from './components/Availability.js';
 import Comparison from './components/Comparison.js';
 import Conclusion from './components/Conclusion.js';
-import createHistory from 'history/createBrowserHistory';
 
 const content = {
     Preface: 'this is the preface',
@@ -26,7 +25,6 @@ const content = {
     Conclusion: 'conclusion'
 }
 
-const history = createHistory()
 
 class App extends Component {
 
@@ -47,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Router history={history}>
+          <Router>
             <div>
               <ul>
                 <li><Link to="/Preface" onClick={this.updateLocation}>Preface</Link></li>
