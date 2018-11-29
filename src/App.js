@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 // import './Content.js';
-import { content } from './Content.js';
 import Drivers from './components/Drivers.js';
 import Scenario from './components/Scenario.js';
 import Preface from './components/Preface.js';
@@ -14,28 +13,34 @@ import Availability from './components/Availability.js';
 import Comparison from './components/Comparison.js';
 import Conclusion from './components/Conclusion.js';
 
-// const content = {
-//     preface,
-//     scenario,
-//     requirements,
-//     savings,
-//     approach,
-//     utilization,
-//     availability,
-//     comparison,
-//     conclusion
-// }
-
+const content = {
+    Preface: 'this is the preface',
+    Scenario: 'scenario',
+    Requirements: 'requirements',
+    Savings: 'savings',
+    Approach: 'approach',
+    Utilization: 'utilization',
+    Availability: 'availability',
+    Comparison: 'comparison',
+    Conclusion: 'conclusion'
+}
 
 
 class App extends Component {
-    constructor() {
-      super();
-      this.state = {
-        boatCost: 50000,
-        houseCost: 200000
-      };
-    }
+
+  constructor() {
+    super();
+    this.state = {
+      boatCost: 50000,
+      houseCost: 200000,
+      location: '',
+      updateLocation: this.updateLocation,
+    };
+  }
+
+  updateLocation = (event) => {
+    this.setState({ location: event.target.text })
+  };
 
   render() {
     return (
@@ -43,28 +48,28 @@ class App extends Component {
           <Router>
             <div>
               <ul>
-                <li><Link to="/Preface">Preface</Link></li>
-                <li><Link to="/Scenario">Scenario</Link></li>
+                <li><Link to="/Preface" onClick={this.updateLocation}>Preface</Link></li>
+                <li><Link to="/Scenario" onClick={this.updateLocation}>Scenario</Link></li>
                 <li>
-                  <Link to="/Requirements">Requirements</Link>
+                  <Link to="/Requirements" onClick={this.updateLocation}>Requirements</Link>
                 </li>
                 <li>
-                  <Link to="/Savings">Savings</Link>
+                  <Link to="/Savings" onClick={this.updateLocation}>Savings</Link>
                 </li>
                 <li>
-                  <Link to="/Approach">Approach</Link>
+                  <Link to="/Approach" onClick={this.updateLocation}>Approach</Link>
                 </li>
                 <li>
-                  <Link to="/Utilization">Utilization</Link>
+                  <Link to="/Utilization" onClick={this.updateLocation}>Utilization</Link>
                 </li>
                 <li>
-                  <Link to="/Availability">Availability</Link>
+                  <Link to="/Availability" onClick={this.updateLocation}>Availability</Link>
                 </li>
                 <li>
-                  <Link to="/Comparison">Comparison</Link>
+                  <Link to="/Comparison" onClick={this.updateLocation}>Comparison</Link>
                 </li>
                 <li>
-                  <Link to="/Conclusion">Conclusion</Link>
+                  <Link to="/Conclusion" onClick={this.updateLocation}>Conclusion</Link>
                 </li>
               </ul>
 
@@ -72,10 +77,10 @@ class App extends Component {
               <header className="App-header">
                 <h1> collaborative economics </h1>
               </header>
-              
+
               <div className="Top-content-bar">
                 <div className="ContentCopy">
-                  <div className="Content"> Content copy</div>
+                  <div className="Content">{content[this.state.location]}</div>
                 </div>
                 <div className="Drivers">
                   <div className="Data">Data Drivers</div>
