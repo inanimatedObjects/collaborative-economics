@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import './App.css';
 import { content } from './Content.js';
 import Drivers from './components/Drivers.js';
@@ -21,7 +21,7 @@ class App extends Component {
       boatCost: 50000,
       houseCost: 200000,
       truckCost: 20000,
-      location: window.location.href.split('/').pop(),
+      location: 'Preface',
       handleNextClick: this.handleNextClick,
     };
   }
@@ -81,6 +81,7 @@ class App extends Component {
                 </div>
               </div>
 
+              <Route path="/"><Redirect to="/Preface" /></Route>
               <Route path="/Preface" render={() => <Preface {...this.state} />} />
               <Route path="/Scenario" render={() => <Scenario {...this.state} />} />
               <Route path="/Requirements" render={() => <Requirements {...this.state} />} />
