@@ -7,6 +7,11 @@ export default class Comparison extends Component {
     constructor() {
       super();
     }
+
+    componentDidMount() {
+      this.props.formToggle()
+    }
+
     render() {
       return(
         <div className="comparison" >

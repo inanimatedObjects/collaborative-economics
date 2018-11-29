@@ -6,6 +6,11 @@ export default class Savings extends Component {
     constructor() {
       super();
     }
+
+    componentDidMount() {
+      this.props.formToggle()
+    }
+
     render() {
       return(
         <div className="savings" >

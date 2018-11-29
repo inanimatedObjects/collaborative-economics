@@ -6,6 +6,11 @@ export default class Requirements extends Component {
     constructor() {
       super();
     }
+    
+    componentDidMount() {
+      this.props.formToggle()
+    }
+
     render() {
       return(
         <div className="requirements">
