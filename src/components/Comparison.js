@@ -11,6 +11,9 @@ export default class Comparison extends Component {
       return(
         <div className="comparison" >
           <p> comparison page </p>
+          <p> house cost: {this.props.houseCost} </p>
+          <p> boat cost: {this.props.boatCost} </p>
+          <p> truck cost: {this.props.truckCost} </p>
           <button><Link to="/Conclusion" onClick={this.props.handleNextClick}> Next </Link></button>
         </div>
       )

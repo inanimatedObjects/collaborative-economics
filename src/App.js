@@ -20,8 +20,9 @@ class App extends Component {
     this.state = {
       boatCost: 50000,
       houseCost: 200000,
+      truckCost: 20000,
       location: window.location.href.split('/').pop(),
-      updateLocation: this.updateLocation,
+      handleNextClick: this.handleNextClick,
     };
   }
 
@@ -31,6 +32,15 @@ class App extends Component {
 
   handleNextClick = (event) => {
     this.setState({ location: event.target.href.split('/').pop()})
+  }
+
+  updateCosts = (event) => {
+    event.preventDefault()
+    this.setState({
+      houseCost: event.target.elements[0].value,
+      boatCost: event.target.elements[1].value,
+      truckCost: event.target.elements[2].value
+    })
   }
 
   render() {
@@ -60,19 +70,26 @@ class App extends Component {
                   <div className="Content">{content[this.state.location]}</div>
                 </div>
                 <div className="Drivers">
-                  <div className="Data">Data Drivers</div>
+                  <div className="Data">
+                    <form onSubmit={this.updateCosts}>
+                      House Cost: <input type="number" name="houseInput" defaultValue={this.state.houseCost} />
+                      Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.boatCost} />
+                      Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.truckCost} />
+                      <input type="submit" value="Update" />
+                    </form>
+                  </div>
                 </div>
               </div>
 
-              <Route path="/Preface" render={() => <Preface handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Scenario" render={() => <Scenario handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Requirements" render={() => <Requirements handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Savings" render={() => <Savings handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Approach" render={() => <Approach handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Utilization" render={() => <Utilization handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Availability" render={() => <Availability handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Comparison" render={() => <Comparison handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
-              <Route path="/Conclusion" render={() => <Conclusion handleNextClick={this.handleNextClick.bind(this)} location={this.state.location} />} />
+              <Route path="/Preface" render={() => <Preface {...this.state} />} />
+              <Route path="/Scenario" render={() => <Scenario {...this.state} />} />
+              <Route path="/Requirements" render={() => <Requirements {...this.state} />} />
+              <Route path="/Savings" render={() => <Savings {...this.state} />} />
+              <Route path="/Approach" render={() => <Approach {...this.state} />} />
+              <Route path="/Utilization" render={() => <Utilization {...this.state} />} />
+              <Route path="/Availability" render={() => <Availability {...this.state} />} />
+              <Route path="/Comparison" render={() => <Comparison {...this.state} />} />
+              <Route path="/Conclusion" render={() => <Conclusion {...this.state} />} />
             </div>
           </Router>
           <div>an inanimatedObjects project</div>

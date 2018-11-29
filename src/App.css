@@ -62,3 +62,8 @@ div {
     margin: 15px;
     border: 2px solid lightgray;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}

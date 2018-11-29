@@ -6,7 +6,12 @@ export default class Conclusion extends Component {
     }
     render() {
       return(
-        <div className="conclusion" >conclusionpage</div>
+        <div className="conclusion" >
+          <p>conclusion page</p>
+          <p> house cost: {this.props.houseCost} </p>
+          <p> boat cost: {this.props.boatCost} </p>
+          <p> truck cost: {this.props.truckCost} </p>
+        </div>
       )
     }
 }
