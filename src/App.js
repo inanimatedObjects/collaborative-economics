@@ -33,7 +33,7 @@ class App extends Component {
     this.state = {
       boatCost: 50000,
       houseCost: 200000,
-      location: '',
+      location: window.location.href.split('/').pop(),
       updateLocation: this.updateLocation,
     };
   }
