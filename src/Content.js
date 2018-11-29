@@ -1,29 +1,12 @@
-// export default content = {
-//     preface,
-//     scenario,
-//     requirements,
-//     savings,
-//     approach,
-//     utilization,
-//     availability,
-//     comparison,
-//     conclusion
-// };
-//
-// content.preface = `Text for the preface`;
-//
-// content.scenario = `Text for the scenario `;
-//
-// content.requirements = `Text for the requirements `;
-//
-// content.savings = `Text for the savings `;
-//
-// content.approach = `Text for the approach `;
-//
-// content.utilization = `Text for the utilization `;
-//
-// content.availability = `Text for the availability `;
-//
-// content.comparison = `Text for the comparison `;
-//
-// content.conclustion = `Text for the conclustion `;
+// Object storing static text content for top left box
+export const content = {
+    Preface: 'this is the preface',
+    Scenario: 'scenario',
+    Requirements: 'requirements',
+    Savings: 'savings',
+    Approach: 'approach',
+    Utilization: 'utilization',
+    Availability: 'availability',
+    Comparison: 'comparison',
+    Conclusion: 'conclusion'
+}
