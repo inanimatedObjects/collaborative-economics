@@ -26,14 +26,17 @@ class App extends Component {
     };
   }
 
+  // Update location via navbar
   updateLocation = (event) => {
     this.setState({ location: event.target.text })
   };
 
+  // Update location via next button
   handleNextClick = (event) => {
     this.setState({ location: event.target.href.split('/').pop()})
   }
 
+  // Update cost data in state when form is submitted
   updateCosts = (event) => {
     event.preventDefault()
     this.setState({
