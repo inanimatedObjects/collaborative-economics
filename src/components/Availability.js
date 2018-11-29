@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { content } from '../Content.js';
 
 export default class Availability extends Component {
     constructor() {
@@ -6,7 +8,10 @@ export default class Availability extends Component {
     }
     render() {
       return(
-        <div className="availability" >availability page</div>
+        <div className="availability" >
+        <p>availability page</p>
+        <button><Link to="/Comparison" onClick={this.props.handleNextClick}> Next </Link></button>
+        </div>
       )
     }
 }
