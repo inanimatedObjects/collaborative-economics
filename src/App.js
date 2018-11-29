@@ -18,6 +18,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      data: {
+        boatCost: 50000,
+        houseCost: 200000,
+        truckCost: 20000
+      },
       location: 'Preface',
       handleNextClick: this.handleNextClick,
       formToggle: this.formToggle
@@ -47,11 +52,15 @@ class App extends Component {
   // Update cost data in state when form is submitted
   updateCosts = (event) => {
     event.preventDefault()
-    this.setState({
+    let updatedData = {...this.state.data,
       houseCost: event.target.elements[0].value,
       boatCost: event.target.elements[1].value,
       truckCost: event.target.elements[2].value
+    }
+    this.setState({
+      data: updatedData
     })
+    console.log(this.state.data.houseCost)
   }
 
   render() {
@@ -83,9 +92,9 @@ class App extends Component {
                 <div className="Drivers">
                   <div className="Data">
                     <form id="inputForm" onSubmit={this.updateCosts}>
-                      House Cost: <input type="number" name="houseInput" defaultValue={this.state.houseCost} />
-                      Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.boatCost} />
-                      Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.truckCost} />
+                      House Cost: <input type="number" name="houseInput" defaultValue={this.state.data.houseCost} />
+                      Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.data.boatCost} />
+                      Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.data.truckCost} />
                       <input type="submit" value="Update" />
                     </form>
                   </div>
