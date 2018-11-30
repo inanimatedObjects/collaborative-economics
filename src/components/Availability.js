@@ -15,9 +15,9 @@ export default class Availability extends Component {
       return(
         <div className="availability" >
         <p>availability page</p>
-        <p> house cost: {this.props.data.houseCost} </p>
-        <p> boat cost: {this.props.data.boatCost} </p>
-        <p> truck cost: {this.props.data.truckCost} </p>
+        <p> house cost: {this.props.data[1].cost} </p>
+        <p> boat cost: {this.props.data[0].cost} </p>
+        <p> truck cost: {this.props.data[2].cost} </p>
         <button><Link to="/Comparison" onClick={this.props.handleNextClick}> Next </Link></button>
         </div>
       )

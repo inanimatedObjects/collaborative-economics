@@ -18,11 +18,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: {
-        boatCost: 50000,
-        houseCost: 200000,
-        truckCost: 20000
-      },
+      data: [
+        {item: 'Boat', cost: 50000},
+        {item: 'House', cost: 200000},
+        {item: 'Truck', cost: 20000},
+        {item: 'Total', cost: 270000},
+      ],
       location: 'Preface',
       handleNextClick: this.handleNextClick,
       formToggle: this.formToggle
@@ -52,15 +53,16 @@ class App extends Component {
   // Update cost data in state when form is submitted
   updateCosts = (event) => {
     event.preventDefault()
-    let updatedData = {...this.state.data,
-      houseCost: event.target.elements[0].value,
-      boatCost: event.target.elements[1].value,
-      truckCost: event.target.elements[2].value
+
+    let updatedData = [...this.state.data]
+    for (let i in updatedData.slice(0, 3)){
+      updatedData[i].cost = Number(event.target.elements[i].value)
     }
+    updatedData[3].cost = Number(event.target.elements[0].value) + Number(event.target.elements[1].value) + Number(event.target.elements[2].value)
+
     this.setState({
       data: updatedData
     })
-    console.log(this.state.data.houseCost)
   }
 
   render() {
@@ -92,9 +94,9 @@ class App extends Component {
                 <div className="Drivers">
                   <div className="Data">
                     <form id="inputForm" onSubmit={this.updateCosts}>
-                      House Cost: <input type="number" name="houseInput" defaultValue={this.state.data.houseCost} />
-                      Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.data.boatCost} />
-                      Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.data.truckCost} />
+                      Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.data[0].cost} />
+                      House Cost: <input type="number" name="houseInput" defaultValue={this.state.data[1].cost} />
+                      Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.data[2].cost} />
                       <input type="submit" value="Update" />
                     </form>
                   </div>
