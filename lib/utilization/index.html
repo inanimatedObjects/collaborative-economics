@@ -61,7 +61,7 @@ svg {
 	var labels = ["Unutilized", "Inclusive Use", "Exclusive Use", "Used by Network Member"];
 
 	var xAxis = d3.axisBottom(x).ticks(8);
-	var yAxis = d3.axisLeft(y).ticks(12);
+	var yAxis = d3.axisLeft(y).ticks(6);
 	var centerLine = d3.axisTop(center).ticks(0);
 
 	d3.json("cfnai.json", function(error, data) {
