@@ -14,7 +14,7 @@ export default class Utilization extends Component {
   }
 
   render() {
-    let data = this.props.data
+    let data = this.props.priceData
 
     return(
       <div className="utilization">
