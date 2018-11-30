@@ -18,7 +18,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: [
+      priceData: [
         {item: 'Boat', cost: 50000},
         {item: 'House', cost: 200000},
         {item: 'Truck', cost: 20000},
@@ -54,14 +54,14 @@ class App extends Component {
   updateCosts = (event) => {
     event.preventDefault()
 
-    let updatedData = [...this.state.data]
-    for (let i in updatedData.slice(0, 3)){
-      updatedData[i].cost = Number(event.target.elements[i].value)
+    let updatedPriceData = [...this.state.priceData]
+    for (let i in updatedPriceData.slice(0, 3)){
+      updatedPriceData[i].cost = Number(event.target.elements[i].value)
     }
-    updatedData[3].cost = Number(event.target.elements[0].value) + Number(event.target.elements[1].value) + Number(event.target.elements[2].value)
+    updatedPriceData[3].cost = Number(event.target.elements[0].value) + Number(event.target.elements[1].value) + Number(event.target.elements[2].value)
 
     this.setState({
-      data: updatedData
+      priceData: updatedPriceData
     })
   }
 
@@ -94,9 +94,9 @@ class App extends Component {
                 <div className="Drivers">
                   <div className="Data">
                     <form id="inputForm" onSubmit={this.updateCosts}>
-                      Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.data[0].cost} />
-                      House Cost: <input type="number" name="houseInput" defaultValue={this.state.data[1].cost} />
-                      Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.data[2].cost} />
+                      Boat Cost: <input type="number" name="boatInput" defaultValue={this.state.priceData[0].cost} />
+                      House Cost: <input type="number" name="houseInput" defaultValue={this.state.priceData[1].cost} />
+                      Truck Cost: <input type="number" name="truckInput" defaultValue={this.state.priceData[2].cost} />
                       <input type="submit" value="Update" />
                     </form>
                   </div>
