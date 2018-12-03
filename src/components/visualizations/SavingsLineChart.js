@@ -8,35 +8,8 @@ var margin = {top: 40, right: 50, bottom: 20, left: 50},
     green = '#b6e86f',
     blue = '#52b6ca';
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-const data = [
-     {"id" : 1, "name": "A", "value": 10, "date": "2018-10"},
-     {"id" : 2, "name": "B", "value": 30, "date": "2019-02"},
-     {"id" : 3, "name": "C", "value": 20, "date": "2019-03"},
-     {"id" : 4, "name": "D", "value": 140, "date": "2019-04"},
-     {"id" : 5, "name": "E", "value": 50, "date": "2019-05"},
-     {"id" : 6, "name": "F", "value": 20, "date": "2019-06"},
-     {"id" : 7, "name": "G", "value": 50, "date": "2019-07"},
-     {"id" : 8, "name": "H", "value": 80, "date": "2019-08"},
-     {"id" : 9, "name": "I", "value": 30, "date": "2019-09"},
-     {"id" : 10, "name": "J", "value": 70, "date": "2019-10"},
-     {"id" : 11, "name": "K", "value": 90, "date": "2019-11"},
-     {"id" : 12, "name": "L", "value": 100, "date": "2019-12"},
-     {"id" : 13, "name": "M", "value": 110, "date": "2020-01"},
-     {"id" : 14, "name": "N", "value":120, "date": "2020-02"},
-     {"id" : 15, "name": "O", "value": 130, "date": "2020-03"},
-     {"id" : 16, "name": "P", "value": 140, "date": "2020-04"},
-     {"id" : 17, "name": "Q", "value": 150, "date": "2020-05"},
-     {"id" : 18, "name": "R", "value": 160, "date": "2020-06"},
-     {"id" : 18, "name": "R", "value": 160, "date": "2020-08"},
-     {"id" : 18, "name": "R", "value": 160, "date": "2020-10"},
-     {"id" : 19, "name": "S", "value": 170, "date": "2021-01"}
-];
+
 
 for (var i in data) {
     if (!data[i-1]) {
@@ -67,9 +40,43 @@ class SavingsLineChart extends Component {
   };
 
   componentDidMount() {
-      this.drawChart;
+      this.drawChart();
     }
-    
+
+drawChart() {
+    const data = [
+         {"id" : 1, "name": "A", "value": 10, "date": "2018-10"},
+         {"id" : 2, "name": "B", "value": 30, "date": "2019-02"},
+         {"id" : 3, "name": "C", "value": 20, "date": "2019-03"},
+         {"id" : 4, "name": "D", "value": 140, "date": "2019-04"},
+         {"id" : 5, "name": "E", "value": 50, "date": "2019-05"},
+         {"id" : 6, "name": "F", "value": 20, "date": "2019-06"},
+         {"id" : 7, "name": "G", "value": 50, "date": "2019-07"},
+         {"id" : 8, "name": "H", "value": 80, "date": "2019-08"},
+         {"id" : 9, "name": "I", "value": 30, "date": "2019-09"},
+         {"id" : 10, "name": "J", "value": 70, "date": "2019-10"},
+         {"id" : 11, "name": "K", "value": 90, "date": "2019-11"},
+         {"id" : 12, "name": "L", "value": 100, "date": "2019-12"},
+         {"id" : 13, "name": "M", "value": 110, "date": "2020-01"},
+         {"id" : 14, "name": "N", "value":120, "date": "2020-02"},
+         {"id" : 15, "name": "O", "value": 130, "date": "2020-03"},
+         {"id" : 16, "name": "P", "value": 140, "date": "2020-04"},
+         {"id" : 17, "name": "Q", "value": 150, "date": "2020-05"},
+         {"id" : 18, "name": "R", "value": 160, "date": "2020-06"},
+         {"id" : 18, "name": "R", "value": 160, "date": "2020-08"},
+         {"id" : 18, "name": "R", "value": 160, "date": "2020-10"},
+         {"id" : 19, "name": "S", "value": 170, "date": "2021-01"}];
+
+
+    const svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+     }
+
     xAxis = d3.axisBottom().scale(this.state.xScale)
         .tickFormat(d3.timeFormat('%b'));
     yAxis = d3.axisLeft().scale(this.state.yScale)
