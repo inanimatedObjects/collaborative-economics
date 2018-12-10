@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import './App.css';
+import Controller from './Controller.js'
+
 import { content } from './Content.js';
 import Scenario from './components/Scenario.js';
 import Preface from './components/Preface.js';
@@ -23,6 +25,21 @@ class App extends Component {
         {item: 'House', cost: 200000},
         {item: 'Truck', cost: 20000},
         {item: 'Total', cost: 270000},
+      ],
+      availabilityData: [
+        {uptime: 20, downtime:80},
+        {uptime: 40, downtime:60},
+      ],
+      usage: [ {key: 'W1', value: 32},
+                 {key: 'W2', value: 26},
+                 {key: 'W3', value: 45},
+                 {key: 'W4', value: 38},
+                 {key: 'W5', value: 53},
+                 {key: 'W6', value: 48},
+                 {key: 'W7', value: 42},
+                 {key: 'W8', value: 34},
+                 {key: 'W9', value: 37},
+                 {key: 'W10', value: 36},
       ],
       location: 'Preface',
       handleNextClick: this.handleNextClick,
@@ -68,6 +85,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Controller />
           <Router>
             <div>
               <ul className="Navbar">
