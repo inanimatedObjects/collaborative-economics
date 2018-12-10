@@ -85,6 +85,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Controller />
           <Router>
             <div>
               <ul className="Navbar">
@@ -132,7 +133,6 @@ class App extends Component {
               <Route path="/Conclusion" render={() => <Conclusion {...this.state} />} />
             </div>
           </Router>
-          <Controller />
           <div>an inanimatedObjects project</div>
       </div>
     );

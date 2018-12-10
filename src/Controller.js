@@ -3,7 +3,7 @@ import Viz from './Viz.js';
 
 export default class Controller extends Component {
   state = {
-    color: "",
+    bands: "",
     width: "",
     toDraw: [],
   }
@@ -11,7 +11,7 @@ export default class Controller extends Component {
   onSubmit = (evt) => {
   	evt.preventDefault();
   	const newShape = {
-  	   color: this.state.color,
+  	   bands: this.state.bands,
   	   width: this.state.width,
   	}
     this.setState({ toDraw: [...this.state.toDraw, newShape]})
@@ -25,17 +25,23 @@ export default class Controller extends Component {
     return(
       <div className="controller">
         <form onSubmit={this.onSubmit}>
-        <label htmlFor="colorSelect">pick a color:</label>
-        <select id="colorSelect" name="color" onChange={this.onChange} value={this.state.color||"default"}>
-          <option disabled value="default">choose</option>
-          <option value="red">red</option>
-          <option value="orange">orange</option>
-          <option value="yellow">yellow</option>
-        </select>
-        <label htmlFor="pixelInput">how big:</label>
-        <input id="pixelInput" name="width" onChange={this.onChange} />
-        <button type="submit">draw!</button>
+            <label htmlFor="bandsSelect">Choose number of bands:</label>
+                        <select id="bands-select" name="bands" onChange={this.onChange} value={this.state.bands||"default"}>
+                                <option disabled value="default">choose</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                        </select>
+
+            <input name="mode" type="radio" value="mirror" id="horizon-mode-mirror" checked  onChange={this.onChange}/><label htmlFor="horizon-mode-mirror"> Mirror</label>
+            <input name="mode" type="radio" value="offset" id="horizon-mode-offset"  onChange={this.onChange}/><label htmlFor="horizon-mode-offset"> Offset</label>
+            // <button type="submit">draw!</button>
+
         </form>
+
         { this.state.toDraw.length ? <Viz shapes={this.state.toDraw}/> : null}
       </div>
 
