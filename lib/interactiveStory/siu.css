@@ -1,23 +1,23 @@
 :root {
-	--siu-black: #262638;
-	--siu-purple: #414258;
-	--siu-purple10: #5B5C72;
-	--siu-purple20: #74758B;
-	--siu-purple30: #8E8FA5;
-	--siu-teal: #588D97;
-	--siu-teal10: #72A7B1;
-	--siu-teal20: #8BC0CA;
-	--siu-teal30: #A5DAE4;
-	--siu-green: #315259;
-	--siu-green10: #4B6C73;
-	--siu-green20: #64858C;
-	--siu-green30: #7E9FA6;
-	--siu-orange: #F47C20;
-	--siu-orange10: #FF963A;
-	--siu-orange20: #FFAF53;
-	--siu-orange30: #FFC96D;
-	--siu-greyDark: #BDBAC0;
-	--siu-greyLight: #D1D3D4;
+	--banana-black: #262638;
+	--banana-purple: #414258;
+	--banana-purple10: #5B5C72;
+	--banana-purple20: #74758B;
+	--banana-purple30: #8E8FA5;
+	--banana-teal: #588D97;
+	--banana-teal10: #72A7B1;
+	--banana-teal20: #8BC0CA;
+	--banana-teal30: #A5DAE4;
+	--banana-green: #315259;
+	--banana-green10: #4B6C73;
+	--banana-green20: #64858C;
+	--banana-green30: #7E9FA6;
+	--banana-orange: #F47C20;
+	--banana-orange10: #FF963A;
+	--banana-orange20: #FFAF53;
+	--banana-orange30: #FFC96D;
+	--banana-greyDark: #BDBAC0;
+	--banana-greyLight: #D1D3D4;
 }
 
 body {
