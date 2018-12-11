@@ -1,0 +1,28 @@
+:root {
+	--siu-black: #262638;
+	--siu-purple: #414258;
+	--siu-purple10: #5B5C72;
+	--siu-purple20: #74758B;
+	--siu-purple30: #8E8FA5;
+	--siu-teal: #588D97;
+	--siu-teal10: #72A7B1;
+	--siu-teal20: #8BC0CA;
+	--siu-teal30: #A5DAE4;
+	--siu-green: #315259;
+	--siu-green10: #4B6C73;
+	--siu-green20: #64858C;
+	--siu-green30: #7E9FA6;
+	--siu-orange: #F47C20;
+	--siu-orange10: #FF963A;
+	--siu-orange20: #FFAF53;
+	--siu-orange30: #FFC96D;
+	--siu-greyDark: #BDBAC0;
+	--siu-greyLight: #D1D3D4;
+}
+
+body {
+
+	font-family: "Arial", sans-serif;
+	font-size: 16px;
+
+}
