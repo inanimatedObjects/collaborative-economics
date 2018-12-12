@@ -8,55 +8,105 @@
 
 <body>
 
-<h1 class="headline">The Banana Boat Chronicles</h1>
+<span class="headline">The Banana Boat Chronicles</span>
+<!-- <title class="headline">The Banana Boat Chronicles</title> -->
 
+<div class="viz">
 <section>
-        <container class="container">
-        	<div class = "side-text" >
-    		        <h2>The Bananaman's Journey</h2>
-		        <h3> Peeling back the layers</h2>
-        		<p id = "story-step-0">So you love banana boats, amiright? </p>
-        		<p id = "story-step-03">Assemble the banana boat gang</p>
-                        <p id = "story-step-05">Banana Fame</p>
-                        <p id = "story-step-10">Banana Groupies</p>
-        		<p id = "story-step-13">Banaga Tragedy</p>
-        		<p id = "story-step-17">Return of the Bananasled</p>
-        		<!-- <p id = "story-step-21">Appeal to the youth</p> -->
+        <div class="story-container">
+        <!-- <div class="story-container"> -->
+        	<div class = "chapters" >
+                	<div class = "side-text" >
+            		        <h2>The Definitive Guide to Banana Boatsmanship</h2>
+        		        <h3> Peeling back the layers</h3>
+                                <!-- scenario -->
+                		<p class="step-title" id = "story-step-0">prelude | hearing the banana call</p>
 
-        		<p id = "story-step-alternative-01">Banana Gang</p>
-        		<p id = "story-step-alternative-04">Mass appeal</p>
-        		<p id = "story-step-alternative-10">Mayor of the Banana Republic</p>
-        		<p id = "story-step-alternative-20">Slippery Business</p>
-        		<p id = "story-step-alternative-33">Bananamies and other villianry</p>
-        		<p id = "story-step-conclusion">A banana life: from boat to hammock</p>
-        	</div>
+                                <!-- requirements -->
+                                <p class="step-title" id = "story-step-03"> 1 | banana clip</p>
+                                <p class ="step-phase"> [ requirements ]</p>
 
+                                <br>
 
-        	<div class = "chart-container">
-                	<div class = "side-charts">
-                		<br>
-                                <div class = "chart-name" >
-                                        <h5 class = "chart-subtitle">[ timeline & area chart ]</h5>
-                		        <h2 class = "chart-title">Get banana-rich or slip tryin...</h2>
+                                <h3>via ownership</h3>
+
+                                <!-- savings -->
+                                <p class="step-title" id = "story-step-05">2 | sourcing banana capital</p>
+                                <p class ="step-phase">[ saving up ]</p>
+
+                                <!-- availability -->
+                                <p class="step-title" id = "story-step-10">3 | banana surplus</p>
+                                <p class ="step-phase">[ availability ]</p>
+
+                                <!-- utilization -->
+                                <p class="step-title" id = "story-step-13"> 4 | gone bananas  </p>
+                                <p class ="step-phase">[ utilization ]</p>
+
+                                <!-- comparison -->
+                                <p class="step-title" id = "story-step-17">5 | slippery slopes</p>
+                                <p class ="step-phase">[ method summary ]</p>
+
+                                <br>
+
+                                <h3>via collaboration</h3>
+                                <!-- collaborative requirements -->
+                		<p class="step-title" id = "story-step-alternative-01">2 | banana republic </p>
+                                <p class ="step-phase">[ saving up ]</p>
+
+                                <p class="step-title" id = "story-step-alternative-10">3 |  bananas by the bushel </p>
+                                <p class ="step-phase">[ availability ]</p>
+
+                                <p class="step-title" id = "story-step-alternative-04">4 |  banana bonanaza </p>
+                                <p class ="step-phase">[ utilization ]</p>
+
+                		<p class="step-title" id = "story-step-alternative-20"> 5 | riding the banana train  </p>
+                                <p class ="step-phase">[ method summary ]</p>
+
+                                <br>
+                                <h3>lessons for the banana brained</h3>
+                		<p class="step-title" id = "story-step-conclusion">network effects gone bananas</p>
+
+                	</div>
+                </div>
+
+                <div class = "content">
+                        <div class = "content-text">
+                                <span>DETAILS</span>
+                                <p id = "story-content-0">It was all a dream...</p>
+                                <p id = "story-content-03">banana assemby => crew + gear = rad</p>
+                        </div>
+
+        	         <div class = "chart-container">
+
+                                 <div id="line-chart-block"></div>
+                                        <div class = "chart-name" >
+                                                <h5 class = "chart-subtitle">[ timeline & area chart ]</h5>
+                        		        <h2 class = "chart-title">Get banana-rich or slip tryin...</h2>
+                                        </div>
+                        		<div class = "chart" id="line-chart"></div>
                                 </div>
 
-                                <div class = "story-nav" >
-                		        <button class="slide", id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
-                		        <button class="slide", id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
+                                <br>
+
+                                <div id="bar-chart-block"></div>
+                                        <div class = "chart-name" >
+                                                <h5 class = "chart-subtitle">[ cumulative bar chart ]</h5>
+                                		<h2 class = "chart-title">Charged to the banana game</h2>
+                                        </div>
+                        		<div class = "chart" id="bar-chart"></div>
                                 </div>
 
-                		<div class = "chart", id="line-chart"></div><br>
-
-                                <div class = "chart-name" >
-                                        <h5 class = "chart-subtitle">[ cumulative bar chart ]</h5>
-                        		<h2 class = "chart-title">Charged to the banana game</h2>
-                                </div>
-
-                		<div class = "chart", id="bar-chart"></div>
         	        </div>
-        	</div>
-        </container>
+                </div>
+
+                <div class = "story-nav" >
+                        <button class="slide", id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
+                        <button class="slide", id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
+                </div>
+
+        </div>
 </section>
+</div>
 
 
 <!-- <script src="d3.js"></script> -->
