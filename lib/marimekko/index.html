@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+  <style>
+    body { text-align: center;}
+    p, button { text-align: center; }
+    path { display: none}
+    line { stroke: lightGrey }
+    #next-button { background-color: #2E8B57; background-image: linear-gradient(to bottom,#8FBC8F 0,#2E8B57 100%) }
+    text { fill: Black }
+    rect { shape-rendering: crispEdges; stroke: white; stroke-width: 1px; }
+    .department-label { font-size: 14px }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<p id="headline" class="text-center lead">
+			</p>
+
+        <button id="next-button" type="button" class="btn btn-primary btn-lg btn-block">
+                Next
+        </button>
+        <div id="chart"></div>
+      <!-- <p id="source-link">More information and analysis is available in the PwC report: <a href="http://www.pwc.co.company/services/economics-policy/insights/company-economic-outlook.html">company Economic Outlook March 2017</a></p> -->
+		</div>
+	</div>
+</div>
+
+
+
+  <script>
+    var data = [
+ {
+   "department": "Customer Success",
+   "employmentShare": 0.064,
+   "valueContribution": 0.24
+ },
+ {
+   "department": "Marketing",
+   "employmentShare": 0.043,
+   "valueContribution": 0.32
+ },
+ {
+   "department": "DevOps",
+   "employmentShare": 0.041,
+   "valueContribution": 0.27
+ },
+ {
+   "department": "Financial and accounting",
+   "employmentShare": 0.032,
+   "valueContribution": 0.32
+ },
+ {
+   "department": "User Onboarding",
+   "employmentShare": 0.087,
+   "valueContribution": 0.09
+ },
+ {
+   "department": "Recruiting",
+   "employmentShare": 0.029,
+   "valueContribution": 0.22
+ },
+ {
+   "department": "General & Administrative",
+   "employmentShare": 0.027,
+   "valueContribution": 0.19
+ },
+ {
+   "department": "Legal",
+   "employmentShare": 0.017,
+   "valueContribution": 0.28
+ },
+ {
+   "department": "Engineering",
+   "employmentShare": 0.006,
+   "valueContribution": 0.63
+ },
+ {
+   "department": "Agriculture, forestry and fishing",
+   "employmentShare": 0.011,
+   "valueContribution": 0.19
+ },
+ {
+   "department": "Product",
+   "employmentShare": 0.004,
+   "valueContribution": 0.32
+ },
+ {
+   "department": "Advertising",
+   "employmentShare": 0.002,
+   "valueContribution": 0.23
+ },
+ {
+   "department": "Regulatory",
+   "employmentShare": 0.003,
+   "valueContribution": 0.08
+ }
+]
+
+    var vWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+var vHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    const width = vWidth * 0.35;
+    const height = vHeight * 0.8;
+
+    const margin = {"top": 25, "left": vWidth * 0.3, "right": vWidth * 0.1, "bottom": 25};
+
+    var xScale = d3.scaleLinear().range([0,width]).domain([0,1]); //valueContribution
+		var yScale = d3.scaleLinear().range([0,height]); //employmentShare
+
+    var totalOffset = 0;
+
+    const rowGap = 20;
+   	const dataLength = data.length;
+    const expandedHeight = height + (dataLength * rowGap);
+
+    const jobs = 34766667;
+    const overallPercent = 0.3;
+
+    var chartNo = 2;
+    const duration = 1000;
+    const mainColour = "SeaGreen";
+    const backgroundColour = "PaleGoldenRod";
+
+    var sourceLink = d3.select("#source-link").style("display", "none");
+
+    data.forEach(function(d){
+      d.offset = totalOffset;
+      totalOffset = d.offset + d.employmentShare;
+    });
+
+    yScale.domain([0,totalOffset]);
+
+    var select = d3.select("button").on("click", updateChart)
+    var xAxis = d3.axisTop(xScale).tickFormat(formatPercentage);
+
+    var defaultHeadline = "There are currently " + roundJobCount(jobs) + " headcount in the company:";
+
+    var defaultRectText = "All " + roundJobCount(jobs) + " headcount:";
+
+    /////////////////////////////////////////////////////////////////////
+
+    var headline = d3.select("#headline").text(defaultHeadline);
+
+    var svg = d3.select("#chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+
+    var chart = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+    chart.append("rect")
+    .attr("id", "base-rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width)
+    .attr("height", height)
+    .style("fill", backgroundColour);
+
+    chart.append("rect")
+    .attr("class", "overall-value-added")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", 0)
+    .attr("height", height)
+    .style("fill", mainColour);
+
+    chart.append("text")
+    .attr("id", "initial-text")
+    .text(defaultRectText)
+    .attr("x", -5)
+    .attr("y", height/2)
+    .style("text-anchor", "end");
+
+    var gAxis = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .call(xAxis);
+
+    gAxis.selectAll("text")
+    .style("fill", mainColour)
+    .style("opacity", 0);
+
+    gAxis.selectAll("line").remove();
+
+
+    var industries = chart.selectAll(".department")
+    .data(data)
+    .enter()
+    .append("g")
+    .attr("class", "department")
+    .attr("transform", function(d) { return "translate(0," + yScale(d.offset) + ")"; });
+
+    industries.append("text")
+    .text(function(d) { return formatPercentage(d.employmentShare * d.valueContribution); })
+    .attr("x", width + 5)
+    .attr("y", function(d) { return (yScale(d.employmentShare)/2) + 5; })
+    .style("opacity", 0);
+
+    var all = industries.append("rect")
+    .attr("class", "all")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width)
+    .attr("height", function(d) { return yScale(d.employmentShare) < 3 ? 3 : yScale(d.employmentShare); })
+    .style("fill", backgroundColour)
+    .style("opacity",0);
+
+    industries.append("text")
+    .attr("class", "all-text")
+    .text(function(d){ return formatHeadcount(d.employmentShare * jobs) + " (" + formatPercentage(d.employmentShare) + ")"  })
+    .attr("x", width/2)
+    .attr("y", function(d) { return 5 + yScale(d.employmentShare)/2; })
+    .style("opacity",0)
+    .style("text-anchor", "middle");
+
+    var valueAdded = industries.append("rect")
+    .attr("class", "value-added")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", 0)
+    .attr("height", function(d) { return yScale(d.employmentShare) < 3 ? 3 : yScale(d.employmentShare); })
+    .style("fill", mainColour);
+
+    industries.append("text")
+    //.filter(function(d){ return d.department != "Regulatory" && d.department != "Advertising" && d.department != "Agriculture, forestry and fishing"; })
+    .attr("class", "value-added-text")
+    //.text(function(d){ return formatPercentage(d.valueContribution)})
+    .text(function(d){ return formatHeadcount((d.employmentShare * jobs) * d.valueContribution) + " (" + formatPercentage(d.valueContribution) + ")"  })
+    //.attr("x", function(d){ return xScale(d.valueContribution) + 5 })
+    .attr("x", width + 5 )
+    .attr("y", function(d) { return 5 + yScale(d.employmentShare)/2; })
+    .style("fill", mainColour)
+    .style("opacity",0);
+
+    var departmentLabel = industries.append("text")
+    //.filter(function(d){ return d.department != "Regulatory" && d.department != "Advertising" && d.department != "Agriculture, forestry and fishing"; })
+    .attr("class", "department-label")
+    .text(function(d) { return d.department })
+    .attr("x", -5)
+    .attr("y", function(d) { return (yScale(d.employmentShare)/2) + 5; })
+    .style("text-anchor", "end")
+    .style("opacity", 0);
+
+
+    function updateChart() {
+
+      if (chartNo === 1) {
+
+       headline.text(defaultHeadline);
+
+        sourceLink.style("display", "none");
+
+        var t1 = d3.transition().duration(duration);
+
+        svg.transition(t1)
+        .attr("height", height + margin.top + margin.bottom);
+
+        industries.transition(t1)
+        .attr("transform", function(d, i) { return "translate(0," + yScale(d.offset) + ")"; });
+
+       valueAdded.transition(t1)
+        .attr("width", 0)
+       	.style("opacity",1);
+
+        d3.selectAll("#base-rect, #initial-text").transition(t1)
+        .style("opacity", 1);
+
+        d3.select("#initial-text")
+        .text(defaultRectText)
+        .style("fill", "black");
+
+        all.transition(t1)
+        .style("opacity", 0);
+
+        departmentLabel.transition(t1)
+        .style("opacity", 0);
+
+        d3.selectAll(".value-added-text").transition(t1)
+        .style("opacity", 0);
+
+        gAxis.selectAll("text").transition(t1)
+        .style("opacity", 0);
+
+        select.text("Next")
+
+        chartNo = chartNo + 1
+
+      } else if (chartNo === 2) {
+
+        headline.text("By 2030, " + formatPercentage(overallPercent) + " (" + roundJobCount(jobs * overallPercent)  + " headcount) willl be needed to mantain growth:");
+
+        var t2 = d3.transition().duration(duration)
+
+        d3.select("#initial-text").text(roundJobCount(jobs * overallPercent)  + "additional headcount required:")
+        .style("fill", mainColour);
+
+        d3.select(".overall-value-added").transition(t2)
+        .attr("width", xScale(0.3));
+
+        gAxis.selectAll("text").transition(t2)
+        .delay(function(d){ return d * 700; })
+        .style("opacity", function(d) { return d < 0.4 ? 1 : 0; })
+
+        chartNo = chartNo + 1
+
+      } else if (chartNo === 3) {
+
+        headline.text("However the estimate of value added will vary across departmental functions.");
+
+        var t3 = d3.transition().duration(duration);
+
+        d3.select(".overall-value-added").transition(t3)
+        .attr("width", 0);
+
+        d3.select("#initial-text").transition(t3)
+        .style("opacity", 0);
+
+        gAxis.selectAll("text").transition(t3)
+        .style("opacity", 0)
+
+        chartNo = chartNo + 1
+
+      } else if (chartNo === 4) {
+
+        headline.text("The current number of jobs are divided across these industries:");
+
+        var t4 = d3.transition().duration(duration);
+
+
+
+        d3.selectAll(".all, .department-label, .all-text").transition(t4)
+        .style("opacity", 1);
+
+        d3.select("#base-rect").transition(t4)
+        .style("opacity", 0);
+
+        chartNo = chartNo + 1
+
+      } else if (chartNo === 5) {
+
+        headline.text("The estimated job losses due to value-added per department will vary:");
+
+        var t5 = d3.transition().duration(duration);
+
+        d3.selectAll(".all-text").transition(t5)
+        .style("opacity", 0 )
+
+        gAxis.selectAll("text").transition(t5)
+        .delay(function(d){ return d * 700; })
+        .style("opacity", 1 )
+
+        valueAdded.transition(t5)
+        .attr("width", function(d) { return xScale(d.valueContribution); });
+
+        d3.selectAll(".value-added-text").transition(t5)
+        .style("opacity", 1 )
+
+        chartNo = chartNo + 1
+
+      }  else if (chartNo === 6) {
+
+        headline.text("Headcount in 'wholesale and retail trade' estimated by value contribution:");
+
+				var t6 = d3.transition().duration(duration);
+
+        industries.selectAll(".department-label, .value-added-text").transition(t6)
+        .style("opacity", function(d) { return d.department == "Wholesale and retail trade" ? 1 : 0; });
+
+        industries.selectAll(".value-added").transition(t7)
+        .style("opacity", function(d) { return d.department == "Wholesale and retail trade" ? 1 : 0.2; });
+
+        chartNo = chartNo + 1
+
+      }  else if (chartNo === 7) {
+
+        headline.text("60% of 'Engineering'  may jobs may be affected:");
+
+        var t7 = d3.transition().duration(duration);
+
+        industries.selectAll(".department-label, .value-added-text").transition(t7)
+        .style("opacity", function(d) { return d.department == "Engineering" ? 1 : 0; });
+
+        industries.selectAll(".value-added").transition(t7)
+        .style("opacity", function(d) { return d.department == "Engineering" ? 1 : 0.2; });
+
+        chartNo = chartNo + 1;
+
+      } else if (chartNo === 8) {
+
+        headline.text("Over half of these potential job losses are in four key department sectors: wholesale and retail trade, manufacturing, administrative and support services, and transport and storage.");
+
+        var t8 = d3.transition().duration(duration);
+
+        svg.transition(t8)
+        .attr("height", expandedHeight + margin.top + margin.bottom);
+
+        industries.transition(t8)
+        .attr("transform", function(d, i) { return "translate(0," + (yScale(d.offset) + (i *  rowGap)) + ")"; });
+
+        industries.selectAll(".department-label, .value-added, .value-added-text").transition(t8)
+        .style("opacity", 1);
+
+        sourceLink.style("display", "inherit");
+
+        select.text("Restart");
+
+        chartNo = 1;
+
+      };
+
+    };
+
+    function formatPercentage(n) {
+      var roundedN = Math.round(n * 1000);
+      return roundedN/10 + "%";
+    };
+
+    function roundJobCount(n) {
+      var roundedN = Math.round(n/10000)/100;
+      return roundedN;
+    };
+
+    function formatHeadcount(n) {
+      return roundJobCount(n) + "M";
+    };
+
+
+  </script>
+</body>
