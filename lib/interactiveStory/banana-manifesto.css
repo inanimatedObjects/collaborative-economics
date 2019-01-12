@@ -25,6 +25,7 @@ section {
         box-shadow: 1px 1px 18px 1px grey;
         border-radius: 8px;
 }
+
 container {
     display: flex;
     flex-direction: row;
@@ -68,6 +69,39 @@ h1 {
         width:95%;
         border-radius: 44px;
 }
+
+.definition-card {
+        border: 1px solid blue;
+        padding: 10px;
+
+}
+
+.intro-row-1 {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid red;
+        padding: 10px;
+        justify-content: space-around;
+}
+
+.intro-col-1 {
+        border: 1px solid green;
+        padding: 10px;
+}
+
+
+.intro-col-2 {
+        border: 1px solid green;
+        padding: 10px;
+}
+
+.outro-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+}
+
+
 
 .chart-name {
         display: flex;
