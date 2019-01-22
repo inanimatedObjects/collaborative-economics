@@ -1,80 +1,113 @@
 body {
+        background-image: url("https://www.transparenttextures.com/patterns/arches.png");
         background-color: #fffac7;
         /* background-color: #fff8e5; */
         /* background-color: #fff9eb; */
         /* background-color: #ffc01f; */
         /* background-color: #ffb700; */
         /* background-color: #f7e200; */
-        /* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
-        background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-        width: 100%;
-}
-
-section {
-        width: 95%;
-        background-color: #fffcf5;
-        position: absolute;
-        /* justify-content: center; */
-        /* align-items: center; */
-        /* align-content: center; */
-        /* align-self: center; */
-        display: flex:
-        margin: 20px 20px 30px 30px;
-        padding: 30px 0px 0px 30px;
-        /* box-shadow: 1px 1px 18px 1px #c7ddff; */
-        box-shadow: 1px 1px 18px 1px grey;
-        border-radius: 8px;
-}
-
-container {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    flex-shrink: 1;
-    /* justify-content: space-around; */
-    /* justify-content: space-between; */
-    justify-content: center;
-    /* padding: 20px; */
-    /* margin: 20px; */
-    /* flex: 1 1 auto; */
-    /* flex-wrap: nowrap; */
-    /* align-content: space-between; */
-    /* align-items: center; */
 }
 
 svg {
+        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
         background-color: #f5fcff;
         width: 100%;
 }
 
-h1 {
-        background-color: #fffac7;
-        /* background-color: #fff8e5; */
-        /* background-color: #fff9eb; */
-        /* background-color: #ffc01f; */
-        /* background-color: #ffb700; */
-        /* background-color: #f7e200; */
-        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-        font: 900 2.3em 'Fira Sans', sans-serif;
-        /* color: white; */
-        color: #fffac7;
-        letter-spacing: 30px;
+.headline {
         display: flex;
         justify-content: center;
         align-self: stretch;
         flex-wrap: wrap;
-        padding: 20px 20px 20px 30px;
-        margin: 10px 0px 20px 0px;
-        /* margin-top: -20px; */
+        padding: 10px;
         width:95%;
         border-radius: 44px;
+        font: 900 2.0em 'Fira Sans', sans-serif;
+        letter-spacing: 8px;
+        color: #fffac7;
+        background-color: #fffac7;
+        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+        /* color: white; */
+        /* background-color: #fff8e5; */
+        /* background-color: #fff9eb; */
+        /* background-color: #ffc01f; */
+        /* background-color: #ffb700; */
+        /* color: cornflowerblue; */
+        /* background-color: #f7e200; */
+}
+
+container {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        flex-shrink: 1;
+        justify-content: center;
+        /* justify-content: space-around; */
+        /* padding: 20px; */
+        /* margin: 20px; */
+        /* flex: 1 1 auto; */
+        /* flex-wrap: nowrap; */
+        /* align-content: space-between; */
+        /* align-items: center; */
 }
 
 .definition-card {
         border: 1px solid blue;
-        padding: 10px;
+        padding: 1px;
+}
+
+.def-term {
+        display: flex;
+        justify-content: center;
+        font: 1.0em 'Fira Sans', sans-serif;
+        color: black;
+        letter-spacing: 1.4em;
+        font-variant: small-caps;
+        border: 1px dotted red;
+        padding: 0px;
+}
+
+.concept {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+}
+.def-banner-img {
+        border: 1px solid pink;
+        padding: 1px;
+}
+.def-banner-term {
+        border: 1px dashed green;
+        padding: 1px;
+}
+
+
+.description {
+        border: 2px dotted lightblue;
+        padding: 5px;
+}
+.def-category {
+        border: 1px double darkblue;
+        padding: 1px;
+}
+.def-list {
+        border: 3px dotted violet;
+        padding: 3px;
+}
+.ref-links {
+        border: 2px dotted cyan;
+        padding: 2px;
+}
+.to-intro-btn {
 
 }
+
+
+
+
+
 
 .intro-row-1 {
         display: flex;
@@ -319,20 +352,16 @@ h1 {
 button {
         display: flex;
         justify-content: center;
-        align-self: flex-end;
-        /* align-items: flex-end; */
+        /* align-self: flex-start; */
+        font-variant: small-caps;
+        margin: 0.5em;
+        padding: 0.5em 3em;
+        box-shadow: inset 0px 0px 4px 0px #fffac7;
         background: none;
         border: 1px solid #c7ddff;
         font: 500 1.0em 'Fira Sans', sans-serif;
-        line-height: 1;
-        width: 300px;
-        font-variant: small-caps;
-        margin: 0.5em;
-        padding: 1em 2em;
-        margin: 15px;
-        padding: 10px;
-        margin-bottom: 20px;
-        box-shadow: inset 0px 0px 4px 0px #fffac7;
+        /* line-height: 1; */
+        /* width: 300px; */
 }
 
 .slide {
