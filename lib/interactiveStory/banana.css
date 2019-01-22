@@ -21,8 +21,58 @@
 }
 
 body {
-
-	font-family: "Arial", sans-serif;
-	font-size: 16px;
-
+        /* background-color: #fffac7;
+        background-image: url("https://www.transparenttextures.com/patterns/cross-stripes.png"); */
+        background-color: #faf3df;
+        background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png");
 }
+
+.concept-definition {
+        margin: 20px;
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        background-color: #fff5f5;
+        background-image: url("https://www.transparenttextures.com/patterns/church.png");
+}
+
+.concept-example {
+        padding: 10px;
+        background-color: white;
+        /* font-family: "Arial", sans-serif; */
+        /* font-size: 5ch; */
+        opacity: 0.85;
+        /* background-color: #faf3df; */
+        background-color: #fffff7;
+        background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
+        /* background-image: url("https://www.transparenttextures.com/patterns/grid-me.png"); */
+        /* background-image: url("https://www.transparenttextures.com/patterns/elegant-grid.png"); */
+        /* background-image: url("https://www.transparenttextures.com/patterns/debut-light.png"); */
+        /* background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png"); */
+        /* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */
+        /* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
+        /* background-image: url("https://www.transparenttextures.com/patterns/cardboard.png"); */
+        /* background-image: url("https://www.transparenttextures.com/patterns/blu-stripes.png"); */
+}
+
+svg {
+        /* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
+        background-color: #f5fcff;
+        width: 100%;
+}
+
+
+
+
+
+
+/* background-color: #020f14; */
+/* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */
+/* background-color: hsl(167, 100%, 96%); */
+/* background-color: pink; */
+/* background-color: hsl(40, 36%, 71%); */
+
+/* background-color: hsl(0, 100%, 96%); */
+/* background-color: #f5fcff; */
+/* background-color: #fdffed; */
+/* background-color: #fefff5; */
