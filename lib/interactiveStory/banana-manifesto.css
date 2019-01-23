@@ -1,108 +1,147 @@
-body {
-        background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-        background-color: #fffac7;
-        /* background-color: #fff8e5; */
-        /* background-color: #fff9eb; */
-        /* background-color: #ffc01f; */
-        /* background-color: #ffb700; */
-        /* background-color: #f7e200; */
-}
 
-svg {
-        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-        background-color: #f5fcff;
-        width: 100%;
-}
-
-.headline {
+.headline-dictionary {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-self: stretch;
+        opacity: 0.8;
         flex-wrap: wrap;
-        padding: 10px;
-        width:95%;
-        border-radius: 44px;
-        font: 900 2.0em 'Fira Sans', sans-serif;
-        letter-spacing: 8px;
-        color: #fffac7;
-        background-color: #fffac7;
-        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-        /* color: white; */
-        /* background-color: #fff8e5; */
-        /* background-color: #fff9eb; */
-        /* background-color: #ffc01f; */
-        /* background-color: #ffb700; */
-        /* color: cornflowerblue; */
-        /* background-color: #f7e200; */
+        padding: 3px;
+        font: 300 1.8ch 'Aleo',serif;
+        letter-spacing: 2px;
+        background-color: black;
+        color: white;
+        /* width:95%; */
+        /* border-radius: 4px; */
+        /* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
 }
 
-container {
+.headline-banana {
         display: flex;
-        flex-direction: row;
+        justify-content: space-between;
+        border-radius:35% 35% 160% 60%;
+        padding: 5vw;
+        margin: 5px;
+        font: 900 4vw 'Fira Sans', sans-serif;
+        letter-spacing: 8px;
+        border: 5px double hsl(50, 100%, 69%);
+        color: #fffac7;
+        background-color: hsl(50, 61%, 54%);
+        background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+
+.container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: stretch; */
         flex-grow: 1;
         flex-shrink: 1;
-        justify-content: center;
-        /* justify-content: space-around; */
-        /* padding: 20px; */
-        /* margin: 20px; */
-        /* flex: 1 1 auto; */
-        /* flex-wrap: nowrap; */
-        /* align-content: space-between; */
-        /* align-items: center; */
+        border: 3px solid red;
+        padding: 3px;
 }
 
 .definition-card {
+        display: flex;
+        flex-direction: column;
+        /* align-content: flex-end; */
+        align-items: baseline;
         border: 1px solid blue;
-        padding: 1px;
+        padding: 3px;
 }
 
 .def-term {
         display: flex;
-        justify-content: center;
-        font: 1.0em 'Fira Sans', sans-serif;
+        /* justify-content: flex-start; */
+        font: 300 5.0vw 'Noto Serif SC',serif;
         color: black;
-        letter-spacing: 1.4em;
-        font-variant: small-caps;
         border: 1px dotted red;
-        padding: 0px;
+        padding: 5px;
+        /* font: 300 5.0ch 'Aleo',serif; */
+        /* font-family: 'Aleo', serif; */
+        /* font: 5.0ch, monospace; */
+        /* font-size: 5.0ch; */
+        /* font-weight: lighter; */
+        /* letter-spacing: 0.4ch; */
+        /* font-variant: small-caps; */
 }
 
 .concept {
         display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-around;
-        align-items: center;
-        align-content: center;
+        flex-direction: column;
+        /* justify-content: space-around; */
+        /* align-content: flex-start; */
 }
-.def-banner-img {
-        border: 1px solid pink;
-        padding: 1px;
-}
-.def-banner-term {
-        border: 1px dashed green;
-        padding: 1px;
-}
+        .def-banner-img {
+                margin-top: -22vh;
+                margin-left: 15vw;
+                margin-right: 2vw;
+                /* margin-right:  10vmin; */
+                opacity: 0.2;
+                display: flex;
+                align-self: flex-end;
+                /* align-self: baseline; */
+                /* width: 50vmin; */
+                /* height: 50vh; */
+                width: 90vw;
+                /* width: 90%; */
+                /* height: 100px; */
+                /* height: 10rem; */
+                /* width: 40rem; */
+        }
+        .def-banner-img img{
+                /* width: inherit; */
+                /* height:inherit; */
+                /* width: 70vw; */
+                /* height:50vw; */
+                border: 1px solid pink;
+                padding: 1px;
+        }
+        .def-banner-term {
+                margin-top: -18vh;
+        }
+        .def-banner-term img{
+                /* margin-top: -40px; */
+                width: 30vw;
+                border: 1px dashed green;
+                padding: 1px;
+        }
 
-
-.description {
-        border: 2px dotted lightblue;
-        padding: 5px;
+.definitions {
+        border: 2px dashed green;
+        padding: 1px;
 }
 .def-category {
+        display: flex;
+        margin-left: 5px;
+        justify-content: space-between;
+        color: black;
+        font-variant: normal;
+        font-style: italic;
+        font-family: monospace;
+        /* font: 'Fira Sans', sans-serif; */
+        font-weight: 100;
+        /* letter-spacing: 0.4em; */
         border: 1px double darkblue;
-        padding: 1px;
+        padding: 5px;
 }
-.def-list {
-        border: 3px dotted violet;
-        padding: 3px;
+.description {
+        border: 2px dotted lightblue;
+        margin: 15px;
+        padding: 5px;
 }
+
+
 .ref-links {
         border: 2px dotted cyan;
         padding: 2px;
 }
-.to-intro-btn {
 
+
+.to-intro-btn {
+        border: 3px dotted violet;
+        padding: 3px;
 }
+
 
 
 
@@ -387,3 +426,8 @@ colors: (
 /* fill: #f5fcff */
 /* fill:#ff00ff; */
 /* fill:#ffcc00; */
+/* background-color: #fff8e5; */
+/* background-color: #fff9eb; */
+/* background-color: #ffc01f; */
+/* background-color: #ffb700; */
+/* background-color: #f7e200; */
