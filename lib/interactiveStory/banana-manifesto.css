@@ -73,8 +73,8 @@
 }
         .def-banner-img {
                 margin-top: -22vh;
-                margin-left: -15vw;
-                /* margin-right: 12vw; */
+                margin-left: 15vw;
+                margin-right: 2vw;
                 /* margin-right:  10vmin; */
                 opacity: 0.2;
                 display: flex;
