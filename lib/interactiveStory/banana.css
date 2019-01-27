@@ -21,10 +21,14 @@
 }
 
 body {
-        /* background-color: #fffac7;
-        background-image: url("https://www.transparenttextures.com/patterns/cross-stripes.png"); */
+        background-image: url("https://www.transparenttextures.com/patterns/grid-noise.png");
+        /* background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png"); */
         background-color: #faf3df;
-        background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png");
+        /* background-color: hsl(0, 0%, 21%); */
+        /* background-color: #740000; */
+        /* background-color: hsl(181, 100%, 90%); */
+        /* background-color: #fffac7; */
+        /* background-image: url("https://www.transparenttextures.com/patterns/cross-stripes.png"); */
 }
 
 .concept-definition {
