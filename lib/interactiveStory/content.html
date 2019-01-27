@@ -15,15 +15,14 @@
 <container class="story-container">
 
 	<div class = "table-of-contents" >
-		<h2>The Bananaman's Journey</h2>
+		<h2>Bananaman's Grand Plan</h2>
 	        <h3> Peeling back the layers</h3>
-                <frameset cols="200,*">
-                <frame>
+                <a href="chapters/ch-1.html" target="main" >So you love banana boats, amiright?</a>
+
+                <!-- <frameset cols="200,*">
+                <frame> -->
                         <ul>
-                        <a href="./chapters/ch-1.html" target="main" >
-                                So you love banana boats, amiright?
         		        <!-- <p id = "story-step-0">So you love banana boats, amiright? </p> -->
-                        </a>
 
         		<p id = "story-step-03">Assemble the banana boat gang</p>
                         <p id = "story-step-05">Banana Fame</p>
@@ -39,15 +38,28 @@
         		<p id = "story-step-alternative-33">Bananamies and other villianry</p>
         		<p id = "story-step-conclusion">A banana life: from boat to hammock</p>
                         </ul>
-                </frame>
-        </frameset>
+                <!-- </frame>
+        </frameset> -->
 	</div>
 
-        <div class="chapter-content">
-                <frame src="./chapters/ch-1.html" name="main">
+        <div class="chapter-content">Chapter CONTENT
+                <frameset rows="150,50,*">
+                        <frame src="chapters/ch-1.html" name="main">
+                        <!-- </frame> -->
                         <!-- <div id="current-chapter-title">so what happened next? -->
                         <!-- </div> -->
-                </frame>
+
+                        <noframes>
+                                <body>
+                                <p>Alternate content</p>
+                                </body>
+                        </noframes>
+                </frameset>
+
+                <div class = "story-nav" >
+                        <button class="slide", id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
+                        <button class="slide", id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
+                </div>
         </div>
 
 	<div class = "chart-container">
@@ -68,22 +80,19 @@
                         </div>
 
         		<div class = "chart", id="bar-chart"></div>
-
-                        <div class = "story-nav" >
-        		        <button class="slide", id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
-        		        <button class="slide", id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
-                        </div>
 	        </div>
 	</div>
 
-<div class="next-btn">
-        <a href="endgame.html"><button>next step</button></a>
-</div>
+</container>
 
-<div class="previous-btn">
-        <a href="requirements.html"><button>previous</button></a>
-</div>
+<container class="page-nav">
+        <div class="next-btn">
+                <a href="endgame.html"><button>forward to conclusion</button></a>
+        </div>
 
+        <div class="previous-btn">
+                <a href="requirements.html"><button>back to requirements</button></a>
+        </div>
 </container>
 
 <!-- <script src="d3.js"></script> -->
