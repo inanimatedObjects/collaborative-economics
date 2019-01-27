@@ -50,6 +50,11 @@
 }
 
 .requirements {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        align-content: stretch;
+        justify-content: space-between;
         border: 2px dashed grey;
         margin: 3px;
         padding: 3px;
@@ -58,7 +63,7 @@
 .requirements-content {
         display: flex;
         /* flex-direction: column; */
-        flex-wrap: nowrap;
+        /* flex-wrap: nowrap; */
         justify-content: space-around;
         border: 1px dashed green;
         margin: 3px;
@@ -70,6 +75,7 @@
         margin: 3px;
         padding: 3px;
         width: 60vmax;
+        flex-grow: 1;
 }
 
 .requirements-checklist {
@@ -111,11 +117,13 @@
         display: flex;
         /* flex-direction: column nowrap; */
         border: 1px solid red;
-        padding: 10px;
+        padding: 5px;
         justify-content: space-between;
 }
 
 .intro-col-1 {
+        /* display: flex; */
+        /* flex-direction: column wrap; */
         flex-grow: 1;
         border: 1px solid green;
         padding: 10px;
@@ -124,6 +132,8 @@
 
 
 .intro-col-2 {
+        /* display: flex; */
+        /* align-self: flex-end; */
         /* background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png"); */
         /* background-image: url("https://www.transparenttextures.com/patterns/grid-me.png"); */
         /* background-image: url("https://www.transparenttextures.com/patterns/elegant-grid.png"); */
@@ -138,14 +148,31 @@
         /* background-color: #f5fcff; */
         background-color: hsl(0, 0%, 21%);
         border: 1px solid green;
-        padding: 15px;
-        text-align: justify;
-
+        padding: 15px 15px  0px 10px;
+        text-align:  right;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        /* font-size: 20px; */
+        /* font-variant: small-caps; */
+        font: 100 1.1vw 'Aleo',sans-serif;
 }
+
+
 .intro-col-2 p{
         text-decoration: overline;
         text-decoration-style: wavy;
         font-variant: small-caps;
         text-align: right;
+}
 
+.intro-col-2 div{
+        /* font-variant: small-caps; */
+        text-align: left;
+        font: 100 1.3vw 'Aleo',sans-serif;
+        /* justify-content: space-between; */
+}
+
+li {
+        text-align: left;
 }
