@@ -2,8 +2,8 @@
 <meta charset="utf-8">
 <title>banana-nomics</title>
 <head>
-        <link rel="stylesheet" type="text/css" href="banana.css">
-        <link rel="stylesheet" type="text/css" href="banana-manifesto.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/banana.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/banana-manifesto.css">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Aleo:300|Noto+Serif+SC:200,400" rel="stylesheet">
 </head>
@@ -14,14 +14,13 @@
 
 <container class="story-container">
 
+<div class="storybook">
 	<div class = "table-of-contents" >
 		<h2>Bananaman's Grand Plan</h2>
 	        <h3> Peeling back the layers</h3>
-                <a href="chapters/ch-1.html" target="main" >So you love banana boats, amiright?</a>
 
-                <!-- <frameset cols="200,*">
-                <frame> -->
-                        <ul>
+                <ul>
+                        <a href="chapters/ch-1.html" target="main" >So you love banana boats, amiright?</a>
         		        <!-- <p id = "story-step-0">So you love banana boats, amiright? </p> -->
 
         		<p id = "story-step-03">Assemble the banana boat gang</p>
@@ -37,30 +36,23 @@
         		<p id = "story-step-alternative-20">Slippery Business</p>
         		<p id = "story-step-alternative-33">Bananamies and other villianry</p>
         		<p id = "story-step-conclusion">A banana life: from boat to hammock</p>
-                        </ul>
-                <!-- </frame>
-        </frameset> -->
+                </ul>
 	</div>
 
         <div class="chapter-content">Chapter CONTENT
-                <frameset rows="150,50,*">
-                        <frame src="chapters/ch-1.html" name="main">
-                        <!-- </frame> -->
-                        <!-- <div id="current-chapter-title">so what happened next? -->
-                        <!-- </div> -->
 
-                        <noframes>
-                                <body>
-                                <p>Alternate content</p>
-                                </body>
-                        </noframes>
-                </frameset>
+                <div src="chapters/ch-1.html" id="main" />
+
+                <!-- <div id="current-chapter-title">so what happened next? -->
+                        <!-- </div> -->
 
                 <div class = "story-nav" >
                         <button class="slide", id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
                         <button class="slide", id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
                 </div>
         </div>
+
+</div>
 
 	<div class = "chart-container">
         	<div class = "side-charts">
