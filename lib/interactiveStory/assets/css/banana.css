@@ -1,0 +1,179 @@
+:root {
+	--banana-black: #262638;
+	--banana-purple: #414258;
+	--banana-purple10: #5B5C72;
+	--banana-purple20: #74758B;
+	--banana-purple30: #8E8FA5;
+	--banana-teal: #588D97;
+	--banana-teal10: #CEF4EE;
+	--banana-teal20: #8BE0F0;
+	--banana-teal30: #00F0FF;
+	--banana-green: #4FFF11;
+	--banana-green10: #CEFBC3;
+	--banana-green20: #70E049;
+	--banana-green30: #006C0B;
+	--banana-orange: #F47C20;
+	--banana-orange10: #FF963A;
+	--banana-orange20: #FFAF53;
+	--banana-orange30: #FFC96D;
+	--banana-greyDark: #6E6E6E;
+	--banana-greyLight: #D1D3D4;
+}
+
+body {
+        background-image: url("https://www.transparenttextures.com/patterns/grid-noise.png");
+        background-color: #faf3df;
+        /* background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png"); */
+        /* background-color: hsl(0, 0%, 21%); */
+        /* background-color: #740000; */
+        /* background-color: hsl(181, 100%, 90%); */
+        /* background-color: #fffac7; */
+        /* background-image: url("https://www.transparenttextures.com/patterns/cross-stripes.png"); */
+}
+
+.concept-definition {
+        margin: 20px;
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        background-color: #fff5f5;
+        background-image: url("https://www.transparenttextures.com/patterns/church.png");
+}
+
+.concept-example {
+        padding: 10px;
+        background-color: white;
+        /* font-family: "Arial", sans-serif; */
+        /* font-size: 5ch; */
+        opacity: 0.85;
+        /* background-color: #faf3df; */
+        background-color: #fffff7;
+        background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
+}
+
+svg {
+        /* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
+        background-color: #f5fcff;
+        width: 100%;
+}
+
+
+.page-nav {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 0px;
+}
+
+
+.previous-btn {
+        display: flex;
+        width: 35vw;
+        justify-content: center;
+        border: 2px dotted red;
+        padding: 5px;
+        background-color: hsl(48, 100%,16%);
+        background-image: url("https://www.transparenttextures.com/patterns/leather.png");
+        /* flex-grow: 1; */
+        /* margin: 8vh 0vh 1vh 0vh; */
+        /* background-color: #403939; */
+        /* justify-content: center; */
+        /* align-self: flex-start; */
+}
+
+.next-btn {
+        display: flex;
+        /* flex-grow: 2; */
+        width: 35vw;
+        justify-content: center;
+        border: 2px dotted blue;
+        margin: 3px;
+        padding: 1px;
+        background-image: url("https://www.transparenttextures.com/patterns/leather.png");
+        background-color: #403939;
+        /* align-self: flex-start; */
+}
+
+
+button {
+        font: 800 2.1ch 'Aleo',serif;
+        color: white;
+        font-variant: small-caps;
+        box-shadow: inset 0px 0px 4px 0px #fffac7;
+        background: none;
+        /* padding: 0.5em 3em; */
+        /* margin: 0.5em; */
+        /* border: 1px solid #c7ddff; */
+        /* font: 500 1.0em 'Fira Sans', sans-serif; */
+        /* line-height: 1; */
+        width: 34vw;
+}
+
+
+.ref-links {
+        display: flex;
+        justify-content: space-around;
+        border: 2px dotted cyan;
+        padding: 2px;
+}
+
+.ref-link {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        border: 1px solid orange;
+        margin: 2px;
+        padding: 1px;
+}
+
+#io-link {
+        background-image: url("./assets/img/io_icon368.png");
+        font-size: 0.8em;
+        text-align: right;
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* display: flex: */
+        /* align-items: flex-end; */
+}
+
+#kr-link {
+        background-image: url("./assets/img/kr_icon368.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+#github-link {
+        background-position: right;
+        background-image: url("./assets/img/github_icon220.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.headline-banana {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: overline;
+        text-decoration-style: wavy;
+        border-radius:35% 35% 160% 60%;
+        padding: 3vw;
+        margin: 5px;
+        font: 100 4vw 'Aleo',serif;
+        border: 5px double hsl(50, 100%, 69%);
+        color: #fffac7;
+        background-color: hsl(50, 61%, 54%);
+        background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+
+
+
+/* background-color: #020f14; */
+/* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */
+/* background-color: hsl(167, 100%, 96%); */
+/* background-color: pink; */
+/* background-color: hsl(40, 36%, 71%); */
+
+/* background-color: hsl(0, 100%, 96%); */
+/* background-color: #f5fcff; */
+/* background-color: #fdffed; */
+/* background-color: #fefff5; */

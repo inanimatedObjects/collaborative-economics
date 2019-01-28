@@ -1,0 +1,87 @@
+body {
+        background-image: url("https://www.transparenttextures.com/patterns/grid-noise.png");
+        background-color: hsl(0, 0%, 21%);
+        /* background-color: #faf3df; */
+        /* background-color: #fffac7; */
+}
+
+.headline-banana {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: overline;
+        text-decoration-style: wavy;
+        border-radius:35% 35% 160% 60%;
+        padding: 3vw;
+        margin: 5px;
+        font: 100 4vw 'Aleo',serif;
+        border: 5px double hsl(50, 100%, 69%);
+        color: #fffac7;
+        background-color: hsl(50, 61%, 54%);
+        background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+
+.endgame-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* margin: 3px; */
+        /* padding: 1px; */
+        /* border: 2px dashed blue; */
+}
+.conclusions {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        box-shadow: 3px 3px 100px 4px #c7ddff;
+        background-color: #f5fcff;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-wrap: wrap;
+        margin-right: 50px;
+        padding: 10px;
+        /* border: 2px dotted red; */
+}
+.endgame-title {
+        font-variant: small-caps;
+        /* border: 2px dotted cyan; */
+}
+.endgame-subtitle {
+        /* border: 2px dotted green; */
+}
+.endgame-banner {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 50vw;
+}
+.endgame-banner-img {
+        display: flex;
+        border: 2px dotted violet;
+        width: 40vw;
+        height:100%;
+        border-radius: 110px;
+        box-shadow: -50px 4px 60px 5vw hsla(59, 100%, 51%, 0.5);
+        border: 20px rgba(255, 230, 6, 0.5);
+        border-style: groove inset ridge inset;
+        border-color: hsla(59, 100%, 51%, 0.6) hsl(165, 48%, 81%);
+}
+.endgame-caption {
+        display: flex;
+        align-self: center;
+        width: 20vmin;
+        justify-content: flex-end;
+        text-align: right;
+        padding: 3px;
+        font: 100 1.0vw 'Noto Serif SC',sans-serif;
+        color: white;
+        /* font-variant: small-caps; */
+        /* align-items: center; */
+        /* border: 2px dotted green; */
+        /* margin: 3px; */
+}
+.endgame-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+}
