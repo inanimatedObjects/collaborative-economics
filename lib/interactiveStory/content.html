@@ -14,68 +14,73 @@
 
 <container class="story-container">
 
-<div class="storybook">
-	<div class = "table-of-contents" >
-		<h2>Bananaman's Grand Plan</h2>
-	        <h3> Peeling back the layers</h3>
-
-                <ul>
-                        <a href="chapters/ch-1.html" target="main" >So you love banana boats, amiright?</a>
-        		        <!-- <p id = "story-step-0">So you love banana boats, amiright? </p> -->
-
-        		<p id = "story-step-03">Assemble the banana boat gang</p>
-                        <p id = "story-step-05">Banana Fame</p>
-                        <p id = "story-step-10">Banana Groupies</p>
-        		<p id = "story-step-13">Banaga Tragedy</p>
-        		<p id = "story-step-17">Return of the Bananasled</p>
-        		<!-- <p id = "story-step-21">Appeal to the youth</p> --> 
-
-        		<p id = "story-step-alternative-01">Banana Gang</p>
-        		<p id = "story-step-alternative-04">Mass appeal</p>
-        		<p id = "story-step-alternative-10">Mayor of the Banana Republic</p>
-        		<p id = "story-step-alternative-20">Slippery Business</p>
-        		<p id = "story-step-alternative-33">Bananamies and other villianry</p>
-        		<p id = "story-step-conclusion">A banana life: from boat to hammock</p>
-                </ul>
-	</div>
-
-        <div class="chapter-content">Chapter CONTENT
-
-                <div src="chapters/ch-1.html" id="main" />
-
-                <!-- <div id="current-chapter-title">so what happened next? -->
-                        <!-- </div> -->
-
-                <div class = "story-nav" >
-                        <button class="slide", id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
-                        <button class="slide", id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
+        <div class="table-of-contents" >
+                <div class="table-labels">
+                        <h2 class="table-title">Bananaman's Grand Plan</h2>
+                        <h3 class="table-subtitle"> Peeling back the layers</h3>
+                </div>
+                <br>
+                <div class="story-section" id="exclusivePath">
+                        <span>Exclusive Ownership</span>
+                        <p><a href="chapters/ch-1.html" target="main" >So you love banana boats, amiright?</a></p>
+        		<p id="story-step-03">Assemble the banana boat gang</p>
+                        <p id="story-step-05">Banana Fame</p>
+                        <p id="story-step-10">Banana Groupies</p>
+        		<p id="story-step-13">Banaga Tragedy</p>
+        		<p id="story-step-17">Return of the Bananasled</p>
+                        <!-- <p id="story-step-0">So you love banana boats, amiright? </p> -->
+        		<!-- <p id="story-step-21">Appeal to the youth</p> --> 
+                </div>
+                <br>
+                <div class="story-section" id="exclusivePath">
+                        <span>Pooled Resources</span>
+        		<p id="story-step-alternative-01">Banana Gang</p>
+        		<p id="story-step-alternative-04">Mass appeal</p>
+        		<p id="story-step-alternative-10">Mayor of the Banana Republic</p>
+        		<p id="story-step-alternative-20">Slippery Business</p>
+        		<p id="story-step-alternative-33">Bananamies and other villianry</p>
+        		<p id="story-step-conclusion">A banana life: from boat to hammock</p>
                 </div>
         </div>
 
-</div>
 
-	<div class = "chart-container">
-        	<div class = "side-charts">
-        		<br>
-                        <div class = "chart-name" >
-                                <h5 class = "chart-subtitle">[ timeline & area chart ]</h5>
-        		        <h2 class = "chart-title">Get banana-rich or slip tryin...</h2>
+        <div class="center-column" >
+                <div class="chart-container">
+                        <div class="chart-headline">
+                                <h2 class="chart-title">Get banana-rich or slip tryin...</h2>
+                                <h5 class="chart-subtitle">[ timeline & area chart ]</h5>
                         </div>
+                        <div class="chart" id="line-chart">chart</div>
+        	</div>
+
+                <div class="chapter-content">Chapter###  (CONTENT)
+                        <div class="chapter-headline">so what happened next? </div>
+                        <div src="chapters/ch-1.html" id="main" >chap content</div>
+                </div>
+
+                <div class="story-nav" >
+                        <button class="slide" id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
+                        <button class="slide" id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
+                </div>
+        </div>
 
 
+        <div class="right-column" >
+                <div class="chart-container">
+                        <div class="side-charts">
 
-        		<div class = "chart", id="line-chart"></div><br>
+                                <div class="chart-name" >
+                                        <h2 class="chart-title">Charged to the banana game</h2>
+                                        <h5 class="chart-subtitle">[ cumulative bar chart ]</h5>
+                                </div>
 
-                        <div class = "chart-name" >
-                                <h5 class = "chart-subtitle">[ cumulative bar chart ]</h5>
-                		<h2 class = "chart-title">Charged to the banana game</h2>
+                                <div class="sidechart" id="bar-chart"></div>
+
                         </div>
-
-        		<div class = "chart", id="bar-chart"></div>
-	        </div>
-	</div>
-
+                </div>
+        </div>
 </container>
+
 
 <container class="page-nav">
         <div class="next-btn">
