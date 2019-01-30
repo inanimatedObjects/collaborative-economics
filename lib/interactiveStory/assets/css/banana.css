@@ -21,117 +21,56 @@
 }
 
 body {
-        background-image: url("https://www.transparenttextures.com/patterns/grid-noise.png");
-        /* background-color: #faf3df; */
-        /* background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png"); */
-        background-color: hsl(0, 0%, 21%);
-        /* background-color: #740000; */
-        /* background-color: hsl(181, 100%, 90%); */
-        /* background-color: hsla(261, 16%, 55%, 0.39); */
-        /* background-color: #fffac7; */
-        /* background-image: url("https://www.transparenttextures.com/patterns/cross-stripes.png"); */
-        /* background-color: #fffefa; */
-        /* background-image: url("https://www.transparenttextures.com/patterns/basketball.png"); */
-        /* background-image: url("https://www.transparenttextures.com/patterns/batthern.png"); */
-
-        /* background-image: url("https://www.transparenttextures.com/patterns/black-linen.png"); */
-
-        /* background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png"); */
-
-        /* background-color: #fff1f0;
-        background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png"); */
-
-        /* background-color: #635d5d;
-        background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png"); */
-
-        /* background-color: #635d5d; */
-        /* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png"); */
-        /* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); */
-
-        /* background-color: #635d5d; */
-        /* background-color: #634f4e; */
-        /* background-image: url("https://www.transparenttextures.com/patterns/graphy.png"); */
-
-        /* background-color: #355657; */
-        background-color: hsla(33, 62%, 23%, 0.8);
         background-image: url("https://www.transparenttextures.com/patterns/ps-neutral.png");
-}
-
-.concept-definition {
-        margin: 20px;
-        font-family: "Arial", sans-serif;
-        font-size: 16px;
-        background-color: #fff5f5;
-        background-image: url("https://www.transparenttextures.com/patterns/church.png");
-}
-
-.concept-example {
-        padding: 10px;
-        background-color: white;
-        /* font-family: "Arial", sans-serif; */
-        /* font-size: 5ch; */
-        opacity: 0.85;
-        /* background-color: #faf3df; */
-        background-color: #fffff7;
-        background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
+        background-color: hsla(280, 10%, 11%, .5);
+        background-color: #355657;
 }
 
 svg {
-        /* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
         background-color: #f5fcff;
         width: 100%;
 }
-
 
 .page-nav {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        margin-top: 0px;
+        margin-top: 3px;
 }
-
 
 .previous-btn {
         display: flex;
+        flex-flow: row wrap;
         width: 35vw;
         justify-content: center;
         border: 2px dotted red;
         padding: 5px;
         background-color: hsl(48, 100%,16%);
         background-image: url("https://www.transparenttextures.com/patterns/leather.png");
-        /* flex-grow: 1; */
-        /* margin: 8vh 0vh 1vh 0vh; */
-        /* background-color: #403939; */
-        /* justify-content: center; */
-        /* align-self: flex-start; */
 }
 
 .next-btn {
         display: flex;
-        /* flex-grow: 2; */
+        flex-flow: row wrap;
         width: 35vw;
         justify-content: center;
-        border: 2px dotted blue;
-        margin: 3px;
-        padding: 1px;
-        background-image: url("https://www.transparenttextures.com/patterns/leather.png");
         background-color: #403939;
-        /* align-self: flex-start; */
+        background-image: url("https://www.transparenttextures.com/patterns/leather.png");
+        padding: 1px;
+        margin: 3px;
+        border: 2px dotted blue;
 }
 
 
 button {
+        /* font: 500 1.0em 'Fira Sans', sans-serif; */
         font: 800 2.1ch 'Aleo',serif;
-        color: white;
         font-variant: small-caps;
         box-shadow: inset 0px 0px 4px 0px #fffac7;
-        background: none;
-        /* padding: 0.5em 3em; */
-        /* margin: 0.5em; */
-        /* border: 1px solid #c7ddff; */
-        /* font: 500 1.0em 'Fira Sans', sans-serif; */
-        /* line-height: 1; */
         width: 34vw;
+        color: white;
+        background: none;
+        border: 1px solid darkgrey;
 }
 
 
@@ -158,8 +97,6 @@ button {
         background-position: right;
         background-size: cover;
         background-repeat: no-repeat;
-        /* display: flex: */
-        /* align-items: flex-end; */
 }
 
 #kr-link {
@@ -169,8 +106,8 @@ button {
 }
 
 #github-link {
-        background-position: right;
         background-image: url("./assets/img/github_icon220.png");
+        background-position: right;
         background-size: contain;
         background-repeat: no-repeat;
 }
@@ -192,14 +129,50 @@ button {
 
 
 
+
+
+
+
+
+
+/*  /////////////////// OTHER COLOR &TEXTURE OPTIONS /////////////////// */
+
 /* background-color: #020f14; */
-/* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); */
-/* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */
 /* background-color: hsl(167, 100%, 96%); */
 /* background-color: pink; */
 /* background-color: hsl(40, 36%, 71%); */
-
 /* background-color: hsl(0, 100%, 96%); */
 /* background-color: #f5fcff; */
 /* background-color: #fdffed; */
 /* background-color: #fefff5; */
+/* background-color: #740000; */
+/* background-color: hsl(181, 100%, 90%); */
+/* background-color: #fff1f0;
+/* background-color: #635d5d;
+/* background-color: #635d5d; */
+/* background-color: #635d5d; */
+/* background-color: #634f4e; */
+/* background-color: hsla(33, 62%, 23%, 0.8); */
+/* background-color: #fffac7; */
+/* background-color: #fffefa; */
+/* background-color: #faf3df; */
+/* background-color: hsla(261, 16%, 55%, 0.39); */
+/* background-color: #faf3df; */
+/* background-color: #403939; */
+
+
+/* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/grid-noise.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/cross-stripes.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/basketball.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/batthern.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/black-linen.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");  */
+/* background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");  */
+/* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); */
+/* background-image: url("https://www.transparenttextures.com/patterns/graphy.png"); */

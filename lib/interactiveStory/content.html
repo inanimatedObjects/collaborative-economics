@@ -45,36 +45,34 @@
         <div class="center-column" >
                 <div class="chart-container">
                         <div class="chart-headline">
-                                <h2 class="chart-title">Get banana-rich or slip tryin...</h2>
+                                <h2 class="chart-title">Peel out or slip tryin...</h2>
                                 <h5 class="chart-subtitle">[ timeline & area chart ]</h5>
                         </div>
                         <div class="chart" id="line-chart"></div>
         	</div>
+
+                <div class="story-nav" >
+                        <button class="slide" id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
+                        <button class="slide" id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
+                </div>
 
                 <div class="chapter-content">Chapter###  (CONTENT)
                         <div class="chapter-headline">so what happened next? </div>
                         <div src="chapters/ch-1.html" id="main" >chap content</div>
                 </div>
 
-                <div class="story-nav" >
-                        <button class="slide" id="step-forward-button" onclick="changeCharts()" > Next Chapter ... </button>
-                        <button class="slide" id="step-backward-button" onclick="changeCharts()" >... Previous Chapter</button>
-                </div>
         </div>
 
 
         <div class="right-column" >
-                <div class="chart-container">
-                        <div class="side-charts">
-
-                                <div class="chart-name" >
-                                        <h2 class="chart-title">Banana-nomics 101</h2>
-                                        <h5 class="chart-subtitle">[ cumulative bar chart ]</h5>
-                                </div>
-
-                                <div class="sidechart" id="bar-chart"></div>
-
+                <div class="sidechart-container">
+                        <div class="sidechart-headline">
+                                <h2 class="sidechart-title">Banana-nomics 101</h2>
+                                <h5 class="sidechart-subtitle">[ cumulative bar chart ]</h5>
                         </div>
+
+                        <div class="sidechart" id="bar-chart"></div>
+
                 </div>
         </div>
 </container>
