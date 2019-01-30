@@ -1,4 +1,12 @@
 
+.concept-definition {
+        margin: 20px;
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        background-color: #fff5f5;
+        background-image: url("https://www.transparenttextures.com/patterns/church.png");
+}
+
 .headline-dictionary {
         display: flex;
         justify-content: space-between;
