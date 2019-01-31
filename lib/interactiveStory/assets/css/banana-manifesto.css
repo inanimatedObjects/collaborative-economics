@@ -73,22 +73,16 @@
         margin: 5px;
         padding: 5px;
 }
-        .chart-container {
-        /* display: flex; */
-        /* flex-direction: column; */
-        /* margin-right: 1%; */
-        /* flex-grow: 1; */
-        /* flex-shrink: 1; */
-        /* display: flex;*/
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-        border: 2px dashed pink;
-        /* border: 3px dotted green; */
-        padding: 5px;
-        margin: 5px;
-}
-        .chart-headline {
+        .mainchart-container {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                border: 2px dashed pink;
+                /* border: 3px dotted green; */
+                padding: 5px;
+                margin: 5px;
+        }
+        .mainchart-headline {
                 display: flex;
                 flex-flow: row nowrap;
                 justify-content: space-between;
@@ -97,7 +91,7 @@
                 margin: 1px;
                 align-items: center;
         }
-        .chart-title {
+        .mainchart-title {
                 text-align: center;
                 font: 800 2.1ch 'Aleo',serif;
                 font-variant: small-caps;
@@ -111,7 +105,7 @@
                 padding: 3px 15px 2px 15px;
                 margin: 3px;
         }
-        .chart-subtitle {
+        .mainchart-subtitle {
                 text-align: right;
                 font: 300 1.6ch 'Aleo',serif;
                 font-style: italic;
@@ -123,25 +117,34 @@
                 padding: 3px;
                 margin: 3px;
         }
-        #line-chart {
-                /* display: flex; */
-                border: 2px dotted blue;
+        .mainchart {
+                /* border-width: 4px; */
+                /* border-color: #D1D3D4; */
+                /* box-shadow: 1px 1px 18px 1px #c7ddff; */
+                /* height: 30vh; */
+                /* border-style: solid; */
                 margin: 5px;
                 padding: 5px;
-                height: 30vh;
+                border: 4px solid orange;
         }
+#line-chart {
+        /* display: flex; */
+        border: 2px dotted blue;
+        margin: 5px;
+        padding: 5px;
+        height: 30vh;
+}
 
-
-        .story-nav {
-                display: flex;
-                flex-direction: row-reverse;
-                padding: 5px;
-                border: 3px dashed cyan;
-                justify-content: space-between;
-                /* justify-content: space-around; */
-                margin: 15px;
-                background-color: hsla(261, 16%, 95%, 0.89);
-        }
+.story-nav {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 5px;
+        border: 3px dashed cyan;
+        justify-content: space-between;
+        /* justify-content: space-around; */
+        margin: 15px;
+        background-color: hsla(261, 16%, 95%, 0.89);
+}
         .slide {
                 color: steelblue;
                 transition: 0.5s;
@@ -168,51 +171,46 @@
         }
 
 
-        .chapter-content {
-                display: flex;
-                height: 40vh;
-                flex-direction: column;
-                border: 1px solid red;
-                margin: 5px;
-                padding: 5px;
-                border-width: 3px;
-                border-color: hsl(55, 100%, 38%, 0.2);
-                box-shadow: 1px 1px 18px 1px #fff2b2;
-                background-image: url("https://www.transparenttextures.com/patterns/paper.png");
-                border: 3px dashed brown;
-                /* flex-direction: row nowrap; */
-                /* flex-grow: 1; */
-                /* width: 25vw; */
-                /* border-color: #D1D3D4; */
-                /* box-shadow: 1px 1px 18px 1px #c7ddff; */
-                /* background-color: #fff2b2; */
-        }
+.chapter-content {
+        display: flex;
+        height: 40vh;
+        flex-direction: column;
+        border: 1px solid red;
+        margin: 5px;
+        padding: 5px;
+        border-width: 3px;
+        border-color: hsl(55, 100%, 38%, 0.2);
+        box-shadow: 1px 1px 18px 1px #fff2b2;
+        background-image: url("https://www.transparenttextures.com/patterns/paper.png");
+        border: 3px dashed brown;
+        /* flex-direction: row nowrap; */
+        /* flex-grow: 1; */
+        /* width: 25vw; */
+        /* border-color: #D1D3D4; */
+        /* box-shadow: 1px 1px 18px 1px #c7ddff; */
+        /* background-color: #fff2b2; */
+}
         .chapter-headline {
                 border: 2px solid blue;
                 margin: 3px;
                 padding: 3px;
         }
-        #main {
-                border: 2px solid green;
-                margin: 3px;
-                padding: 3px;
-        }
 
-        .page-nav {
-                display: flex;
-                flex-direction: row;
-                padding: 5px;
-                border: 3px dashed cyan;
-                justify-content: space-between;
-                /* margin-top: -20px; */
-                /* display: flex; */
-                /* border: 2px dotted pink; */
-                /* justify-content: space-around; */
-                /* margin: 1vh 1vw 2vh 2vw; */
-                /* margin-top: 120px; */
-                /* margin-bottom: 20vh; */
-                margin: 3px;
-        }
+#main {
+        border: 2px solid green;
+        margin: 3px;
+        padding: 3px;
+}
+
+.page-nav {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        border: 3px dashed cyan;
+        justify-content: space-between;
+        /* border: 2px dotted pink; */
+        margin: 3px;
+}
 
 
 
@@ -445,4 +443,4 @@
         margin-bottom: 20px;
         height: 30vh;
         /* border-style: solid; */
-        /* border: 3px dashed orange; */
+        /* border: 3px dashed orange;
