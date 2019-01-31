@@ -35,12 +35,11 @@
         for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
         return d;
     }).then(function(data) {
-                console.log(data);
+                console.log("*** loaded data: ", data);
 
                 var keys = data.columns.slice(1);
+                console.log('****** keys: ', keys);
 
-                console.log('keys');
-                console.log(keys);
                 x0.domain(data.map(function(d) { return d.State; }));
                 x1.domain(keys).rangeRound([0, x0.bandwidth()]);
                 y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
